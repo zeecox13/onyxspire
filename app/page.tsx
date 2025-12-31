@@ -424,7 +424,7 @@ export default function Home() {
             {[
               {
                 name: 'Alexia',
-                username: 'alexia',
+                username: 'alexiabrea',
                 image: '/photos/alexia.png',
               },
               {

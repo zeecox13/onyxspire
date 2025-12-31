@@ -15,7 +15,7 @@ const stats = [
 const topCreators = [
   {
     name: 'Alexia',
-    username: 'alexia',
+    username: 'alexiabrea',
     image: '/photos/alexia.png',
   },
   {
