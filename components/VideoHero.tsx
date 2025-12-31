@@ -37,13 +37,33 @@ export default function VideoHero() {
   }, [currentVideoIndex, setIsDarkVideo])
 
   useEffect(() => {
-    // Preload all videos immediately with proper settings
-    const videos = videoRefs.current.filter(Boolean) as HTMLVideoElement[]
-    videos.forEach((video) => {
+    // Prioritize first video - load and play immediately
+    const firstVideo = videoRefs.current[0]
+    if (firstVideo) {
+      firstVideo.preload = 'auto'
+      firstVideo.playsInline = true
+      firstVideo.muted = true
+      // Force immediate load and play
+      firstVideo.load()
+      // Try to play immediately, retry if needed
+      const tryPlay = () => {
+        if (firstVideo.readyState >= 2) { // HAVE_CURRENT_DATA or better
+          firstVideo.play().catch(() => {
+            // Retry after a short delay
+            setTimeout(() => firstVideo.play().catch(() => {}), 100)
+          })
+        } else {
+          firstVideo.addEventListener('loadeddata', tryPlay, { once: true })
+        }
+      }
+      tryPlay()
+    }
+    
+    // Lazy load other videos - only preload metadata to save bandwidth
+    const otherVideos = videoRefs.current.slice(1).filter(Boolean) as HTMLVideoElement[]
+    otherVideos.forEach((video) => {
       if (video) {
-        video.preload = 'auto'
-        video.load()
-        // Optimize for smooth playback
+        video.preload = 'metadata' // Only load metadata, not full video
         video.playsInline = true
         video.muted = true
       }
@@ -64,15 +84,47 @@ export default function VideoHero() {
     
     videos.forEach((video, index) => {
       if (video) {
+        // Lazy load video source if it hasn't been loaded yet
+        if (index > 0 && !video.src && video.dataset.src) {
+          video.src = video.dataset.src
+          video.preload = 'auto'
+          video.load()
+        }
+        
         if (index === currentVideoIndex) {
-          // Play current video - wait for it to be ready
-          if (video.readyState >= 3) { // HAVE_FUTURE_DATA or HAVE_ENOUGH_DATA
-            video.play().catch(() => {})
-          } else {
-            const playWhenReady = () => {
-              video.play().catch(() => {})
+          // Ensure video is buffered enough before playing to prevent stuttering
+          const playVideo = () => {
+            // Check if video has enough data buffered
+            if (video.readyState >= 4) { // HAVE_ENOUGH_DATA - best for smooth playback
+              video.play().catch((err) => {
+                console.warn('Video play failed:', err)
+                // Retry after a short delay
+                setTimeout(() => video.play().catch(() => {}), 200)
+              })
+            } else if (video.readyState >= 3) { // HAVE_FUTURE_DATA - also acceptable
+              video.play().catch((err) => {
+                console.warn('Video play failed:', err)
+              })
+            } else {
+              // Wait for more data to buffer
+              const bufferCheck = () => {
+                if (video.readyState >= 3) {
+                  video.play().catch(() => {})
+                } else {
+                  video.addEventListener('progress', bufferCheck, { once: true })
+                }
+              }
+              video.addEventListener('progress', bufferCheck, { once: true })
             }
-            video.addEventListener('canplaythrough', playWhenReady, { once: true })
+          }
+          
+          // Try to play immediately if ready, otherwise wait
+          if (video.readyState >= 3) {
+            playVideo()
+          } else {
+            video.addEventListener('canplaythrough', playVideo, { once: true })
+            // Fallback if canplaythrough doesn't fire
+            setTimeout(playVideo, 500)
           }
         } else {
           // Pause other videos smoothly
@@ -104,24 +156,37 @@ export default function VideoHero() {
           ref={(el) => {
             videoRefs.current[index] = el
           }}
-          src={src}
+          src={index === 0 ? src : undefined} // Only set src for first video initially
+          data-src={index > 0 ? src : undefined} // Store src in data attribute for others
           muted
           loop
           playsInline
-          preload="auto"
+          preload={index === 0 ? "auto" : "metadata"} // Only auto-preload first video
           className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out ${
             index === currentVideoIndex ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'
           }`}
           onLoadedData={(e) => {
             const video = e.target as HTMLVideoElement
-            if (index === currentVideoIndex && video.readyState >= 3) {
+            if (index === currentVideoIndex && video.readyState >= 4) {
               video.play().catch(() => {})
             }
           }}
           onCanPlayThrough={(e) => {
             const video = e.target as HTMLVideoElement
-            if (index === currentVideoIndex && video.paused) {
+            if (index === currentVideoIndex && video.paused && video.readyState >= 4) {
               video.play().catch(() => {})
+            }
+          }}
+          onWaiting={(e) => {
+            // Video is buffering - ensure it plays when ready
+            const video = e.target as HTMLVideoElement
+            if (index === currentVideoIndex) {
+              const resumePlay = () => {
+                if (video.readyState >= 3 && video.paused) {
+                  video.play().catch(() => {})
+                }
+              }
+              video.addEventListener('canplay', resumePlay, { once: true })
             }
           }}
           onError={(e) => {
