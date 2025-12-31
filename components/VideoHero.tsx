@@ -83,6 +83,16 @@ export default function VideoHero() {
 
   return (
     <div className="relative h-screen w-full overflow-hidden" style={{ width: '100vw', position: 'relative', left: '50%', right: '50%', marginLeft: '-50vw', marginRight: '-50vw' }}>
+      {/* Dark gradient overlay at top - stays with hero section */}
+      <div 
+        className="absolute inset-x-0 top-0 pointer-events-none"
+        style={{
+          height: '240px',
+          background: 'linear-gradient(to bottom, rgba(0, 0, 0, 0.98) 0%, rgba(0, 0, 0, 0.9) 15%, rgba(0, 0, 0, 0.75) 30%, rgba(0, 0, 0, 0.55) 50%, rgba(0, 0, 0, 0.4) 70%, rgba(0, 0, 0, 0.25) 85%, transparent 100%)',
+          zIndex: 40,
+        }}
+      />
+      
       {/* Render all videos, all playing, only show current one */}
       {videoSources.map((src, index) => (
         <video
