@@ -1,0 +1,41 @@
+[
+  {
+    "id": "1",
+    "username": "alexiabrea",
+    "displayName": "Alexia Brea",
+    "bio": "Soft chaos, luxury GFE energy, and quietly curated intimacy for the ones who pay attention.",
+    "profileImageUrl": "https://via.placeholder.com/400/121212/C6A667?text=AB",
+    "heroImageUrl": null,
+    "accentColor": "#C6A667",
+    "links": [
+      {
+        "id": "1",
+        "label": "Join my OnlyFans",
+        "url": "https://onlyfans.com/alexiabrea",
+        "platform": "onlyfans",
+        "isPrimary": true,
+        "isActive": true,
+        "order": 1
+      },
+      {
+        "id": "2",
+        "label": "Instagram",
+        "url": "https://instagram.com/alexiabrea",
+        "platform": "instagram",
+        "isPrimary": false,
+        "isActive": true,
+        "order": 2
+      },
+      {
+        "id": "3",
+        "label": "Twitter",
+        "url": "https://twitter.com/alexiabrea",
+        "platform": "twitter",
+        "isPrimary": false,
+        "isActive": true,
+        "order": 3
+      }
+    ]
+  }
+]
+
