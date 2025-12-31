@@ -12,13 +12,15 @@ export default function Navigation() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [isOnHeroPage, setIsOnHeroPage] = useState(false)
   const [isPastHero, setIsPastHero] = useState(false)
+  const [scrollProgress, setScrollProgress] = useState(0) // 0 to 1, where 0 is top of hero, 1 is past hero
   const pathname = usePathname()
   const { isDarkVideo } = useVideo()
   const isHomePage = pathname === '/'
 
   useEffect(() => {
     if (!isHomePage) {
-      setIsPastHero(true) // Always show white nav on non-home pages
+      setIsPastHero(true) // Always show background nav on non-home pages
+      setScrollProgress(1) // Full progress on non-home pages
       return
     }
 
@@ -27,9 +29,14 @@ export default function Navigation() {
     const handleScroll = () => {
       if (!ticking) {
         window.requestAnimationFrame(() => {
-          setIsScrolled(window.scrollY > 50)
-          setIsOnHeroPage(window.scrollY < window.innerHeight)
-          setIsPastHero(window.scrollY > window.innerHeight)
+          const scrollY = window.scrollY
+          const heroHeight = window.innerHeight
+          setIsScrolled(scrollY > 50)
+          setIsOnHeroPage(scrollY < heroHeight)
+          setIsPastHero(scrollY > heroHeight)
+          // Calculate scroll progress: 0 at top, 1 at bottom of hero
+          const progress = Math.min(scrollY / heroHeight, 1)
+          setScrollProgress(progress)
           ticking = false
         })
         ticking = true
@@ -51,52 +58,73 @@ export default function Navigation() {
   ]
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50">
+    <nav className="fixed top-0 left-0 right-0" style={{ zIndex: 100 }}>
       {/* Pink line on very top */}
       <div className="h-0.5 bg-accent-pink w-full" />
       
       {/* Nav content */}
       <div 
-        className="relative transition-all duration-500 ease-in-out"
+        className="relative"
         style={{
-          backgroundColor: isPastHero || !isHomePage ? 'transparent' : 'transparent',
-          backgroundImage: isPastHero || !isHomePage ? 'url(/photos/background.png)' : 'none',
-          backgroundSize: isPastHero || !isHomePage ? 'cover' : 'none',
-          backgroundPosition: isPastHero || !isHomePage ? 'center' : 'center',
-          backgroundRepeat: isPastHero || !isHomePage ? 'no-repeat' : 'no-repeat',
+          zIndex: 100,
         }}
       >
+        {/* Background layer - only shows when scrolling past hero or on non-home pages */}
+        {(isPastHero || !isHomePage || (isHomePage && scrollProgress > 0.15)) && (
+          <div
+            className="absolute inset-0 transition-opacity duration-500 ease-out"
+            style={{
+              backgroundColor: isHomePage && !isPastHero && scrollProgress > 0.15
+                ? `rgba(0, 0, 0, ${Math.max(0, 1 - (scrollProgress - 0.15) / 0.85)})` // Fade from black (1) to transparent (0) as scrolling
+                : 'transparent',
+              backgroundImage: 'url(/photos/background.png)',
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              backgroundRepeat: 'no-repeat',
+              opacity: isPastHero || !isHomePage 
+                ? 1 
+                : (scrollProgress - 0.15) / 0.85, // Smooth fade in from 0.15 to 1.0
+              maskImage: 'linear-gradient(to bottom, black 0%, black calc(100% - 60px), transparent 100%)',
+              WebkitMaskImage: 'linear-gradient(to bottom, black 0%, black calc(100% - 60px), transparent 100%)',
+              zIndex: -1,
+            }}
+          />
+        )}
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex items-center justify-between" style={{ height: 'clamp(3rem, 4vw, 3.5rem)' }}>
-          <Link href="/" className="flex items-center space-x-2 relative z-10">
-              <div className="relative" style={{ height: 'clamp(2.5rem, 3vw, 3rem)', width: 'auto' }}>
-                <Image
-                  src="/photos/whiteoslogo.png"
-                  alt="Onyxspire"
-                  width={180}
-                  height={60}
-                  className={`w-auto absolute inset-0 transition-opacity duration-500 ease-in-out ${isPastHero || !isHomePage ? 'opacity-0' : 'opacity-100'}`}
-                  style={{ height: 'clamp(2.5rem, 3vw, 3rem)' }}
-                  priority
-                  fetchPriority="high"
-                  unoptimized
-                />
-                <Image
-                  src="/photos/bkoslogo.png"
-                  alt="Onyxspire"
-                  width={180}
-                  height={60}
-                  className={`w-auto absolute inset-0 transition-opacity duration-500 ease-in-out ${isPastHero || !isHomePage ? 'opacity-100' : 'opacity-0'}`}
-                  style={{ height: 'clamp(2.5rem, 3vw, 3rem)' }}
-                  priority
-                  fetchPriority="high"
-                  unoptimized
-                />
+          <Link href="/" className="flex items-center space-x-2 relative" style={{ zIndex: 100, position: 'relative' }}>
+              <div className="relative" style={{ height: 'clamp(2.5rem, 3vw, 3rem)', width: '180px', zIndex: 100 }}>
+                {!(isPastHero || !isHomePage) && (
+                  <Image
+                    src="/photos/whiteoslogo.png"
+                    alt="Onyxspire"
+                    width={180}
+                    height={60}
+                    className="w-auto transition-opacity duration-500 ease-in-out"
+                    style={{ height: 'clamp(2.5rem, 3vw, 3rem)', width: 'auto' }}
+                    priority
+                    fetchPriority="high"
+                    unoptimized
+                  />
+                )}
+                {(isPastHero || !isHomePage) && (
+                  <Image
+                    src="/photos/bkoslogo.png"
+                    alt="Onyxspire"
+                    width={180}
+                    height={60}
+                    className="w-auto transition-opacity duration-500 ease-in-out"
+                    style={{ height: 'clamp(2.5rem, 3vw, 3rem)', width: 'auto' }}
+                    priority
+                    fetchPriority="high"
+                    unoptimized
+                  />
+                )}
               </div>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8 relative z-10">
+          <div className="hidden md:flex items-center space-x-8 relative" style={{ zIndex: 100 }}>
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -111,7 +139,8 @@ export default function Navigation() {
 
           {/* Mobile Menu Button */}
           <button
-            className={`md:hidden transition-colors duration-500 ease-in-out hover:text-accent-pink relative z-10 ${isPastHero || !isHomePage ? 'text-black-espresso' : 'text-white'}`}
+            className={`md:hidden transition-colors duration-500 ease-in-out hover:text-accent-pink relative ${isPastHero || !isHomePage ? 'text-black-espresso' : 'text-white'}`}
+            style={{ zIndex: 100 }}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle menu"
           >

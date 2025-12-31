@@ -37,23 +37,17 @@ export default function VideoHero() {
   }, [currentVideoIndex, setIsDarkVideo])
 
   useEffect(() => {
-    // Prioritize loading the first video immediately
-    const firstVideo = videoRefs.current[0]
-    if (firstVideo) {
-      firstVideo.load()
-      // Set preload to auto for first video to start loading immediately
-      firstVideo.preload = 'auto'
-    }
-    
-    // Preload other videos after a short delay to prioritize first video
-    const preloadTimer = setTimeout(() => {
-      const videos = videoRefs.current.filter(Boolean) as HTMLVideoElement[]
-      videos.forEach((video, index) => {
-        if (index > 0) {
-          video.load()
-        }
-      })
-    }, 100)
+    // Preload all videos immediately with proper settings
+    const videos = videoRefs.current.filter(Boolean) as HTMLVideoElement[]
+    videos.forEach((video) => {
+      if (video) {
+        video.preload = 'auto'
+        video.load()
+        // Optimize for smooth playback
+        video.playsInline = true
+        video.muted = true
+      }
+    })
 
     const interval = setInterval(() => {
       setCurrentVideoIndex((prev) => (prev + 1) % videoSources.length)
@@ -61,7 +55,6 @@ export default function VideoHero() {
 
     return () => {
       clearInterval(interval)
-      clearTimeout(preloadTimer)
     }
   }, [])
 
@@ -70,13 +63,24 @@ export default function VideoHero() {
     const videos = videoRefs.current.filter(Boolean) as HTMLVideoElement[]
     
     videos.forEach((video, index) => {
-      if (index === currentVideoIndex) {
-        // Play current video
-        video.play().catch(() => {})
-      } else {
-        // Pause other videos
-        video.pause()
-        video.currentTime = 0
+      if (video) {
+        if (index === currentVideoIndex) {
+          // Play current video - wait for it to be ready
+          if (video.readyState >= 3) { // HAVE_FUTURE_DATA or HAVE_ENOUGH_DATA
+            video.play().catch(() => {})
+          } else {
+            const playWhenReady = () => {
+              video.play().catch(() => {})
+            }
+            video.addEventListener('canplaythrough', playWhenReady, { once: true })
+          }
+        } else {
+          // Pause other videos smoothly
+          if (!video.paused) {
+            video.pause()
+          }
+          // Don't reset currentTime - allows for smoother transitions if user scrolls back
+        }
       }
     })
   }, [currentVideoIndex])
@@ -87,8 +91,8 @@ export default function VideoHero() {
       <div 
         className="absolute inset-x-0 top-0 pointer-events-none"
         style={{
-          height: '240px',
-          background: 'linear-gradient(to bottom, rgba(0, 0, 0, 0.98) 0%, rgba(0, 0, 0, 0.9) 15%, rgba(0, 0, 0, 0.75) 30%, rgba(0, 0, 0, 0.55) 50%, rgba(0, 0, 0, 0.4) 70%, rgba(0, 0, 0, 0.25) 85%, transparent 100%)',
+          height: '350px',
+          background: 'linear-gradient(to bottom, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.85) 10%, rgba(0, 0, 0, 0.7) 25%, rgba(0, 0, 0, 0.5) 40%, rgba(0, 0, 0, 0.35) 55%, rgba(0, 0, 0, 0.2) 70%, rgba(0, 0, 0, 0.1) 85%, transparent 100%)',
           zIndex: 40,
         }}
       />
@@ -104,14 +108,19 @@ export default function VideoHero() {
           muted
           loop
           playsInline
-          preload={index === 0 ? "auto" : "metadata"}
-          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ease-in-out ${
+          preload="auto"
+          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out ${
             index === currentVideoIndex ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'
           }`}
-          onCanPlay={(e) => {
-            // Only play if this is the current video
+          onLoadedData={(e) => {
             const video = e.target as HTMLVideoElement
-            if (index === currentVideoIndex) {
+            if (index === currentVideoIndex && video.readyState >= 3) {
+              video.play().catch(() => {})
+            }
+          }}
+          onCanPlayThrough={(e) => {
+            const video = e.target as HTMLVideoElement
+            if (index === currentVideoIndex && video.paused) {
               video.play().catch(() => {})
             }
           }}
