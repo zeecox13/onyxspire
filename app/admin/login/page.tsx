@@ -52,21 +52,27 @@ export default function AdminLogin() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center px-6 bg-white">
-      <div className="max-w-md w-full">
+    <div className="fixed inset-0 min-h-screen flex items-center justify-center px-6 z-50" style={{ backgroundImage: 'url(/photos/background.png)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', backgroundAttachment: 'fixed' }}>
+      <div className="max-w-md w-full relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="bg-white rounded-lg border-2 border-gray-200 shadow-lg p-8"
+          className="bg-white/95 backdrop-blur-sm rounded-[20px] border-2 border-accent-pink/35 shadow-xl p-10"
         >
-          <h1 className="text-2xl font-bold text-black-espresso mb-6 text-center">
+          <h1 
+            className="text-4xl font-bold text-black-espresso mb-3 text-center"
+            style={{ fontFamily: "'Catchy Mager', 'Cormorant Garamond', 'Playfair Display', serif" }}
+          >
             Admin Login
           </h1>
+          <p className="text-black-espresso/70 mb-10 text-center text-sm uppercase tracking-wider font-sans">
+            Enter your password to continue
+          </p>
 
-          <form onSubmit={handleSubmit} className="space-y-4">
+          <form onSubmit={handleSubmit} className="space-y-6">
             <div>
-              <label htmlFor="password" className="block text-black-espresso mb-2 text-sm font-medium">
+              <label htmlFor="password" className="block text-black-espresso mb-3 text-sm font-semibold uppercase tracking-wider font-sans">
                 Password
               </label>
               <input
@@ -74,27 +80,38 @@ export default function AdminLogin() {
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full px-4 py-3 bg-white border-2 border-gray-300 text-black-espresso rounded-lg focus:outline-none focus:border-accent-pink transition-all"
-                placeholder="Enter password"
+                className="w-full px-5 py-4 bg-white border-2 border-accent-pink/35 text-black-espresso rounded-lg focus:outline-none focus:border-accent-pink transition-all text-lg font-sans"
+                placeholder="••••••••"
                 required
                 autoFocus
               />
             </div>
 
             {error && (
-              <div className="bg-red-50 border border-red-200 text-red-600 px-4 py-3 rounded-lg text-sm">
+              <motion.div
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="bg-red-500/20 border-2 border-red-500/50 text-red-600 px-5 py-4 rounded-lg text-sm font-sans"
+              >
                 {error}
-              </div>
+              </motion.div>
             )}
 
             <button
               type="submit"
               disabled={isLoading}
-              className="w-full bg-accent-pink text-white px-6 py-3 font-semibold rounded-lg hover:bg-accent-pink/90 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full bg-accent-pink text-white px-8 py-4 font-semibold uppercase tracking-wider hover:bg-accent-pink/90 transition-all luxury-glow disabled:opacity-50 disabled:cursor-not-allowed text-lg"
+              style={{ fontFamily: "'Catchy Mager', 'Cormorant Garamond', 'Playfair Display', serif" }}
             >
-              {isLoading ? 'Logging in...' : 'Login'}
+              {isLoading ? 'Authenticating...' : 'Login'}
             </button>
           </form>
+
+          <div className="mt-8 pt-8 border-t border-accent-pink/20 text-center">
+            <p className="text-black-espresso/40 text-xs font-sans">
+              Restricted access. Authorized personnel only.
+            </p>
+          </div>
         </motion.div>
       </div>
     </div>

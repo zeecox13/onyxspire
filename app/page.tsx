@@ -446,6 +446,15 @@ export default function Home() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: index * 0.15 }}
                 className="group relative bg-white rounded-[24px] border-2 border-accent-pink/35 shadow-xl hover:shadow-2xl hover:border-accent-pink/60 transition-all duration-500 hover:-translate-y-2 overflow-hidden cursor-pointer block"
+                style={{
+                  boxShadow: '0 20px 40px rgba(0, 0, 0, 0.08), 0 0 30px rgba(255, 20, 147, 0.15), 0 0 60px rgba(255, 20, 147, 0.1)',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.boxShadow = '0 20px 40px rgba(0, 0, 0, 0.08), 0 0 40px rgba(255, 20, 147, 0.3), 0 0 80px rgba(255, 20, 147, 0.2)'
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.boxShadow = '0 20px 40px rgba(0, 0, 0, 0.08), 0 0 30px rgba(255, 20, 147, 0.15), 0 0 60px rgba(255, 20, 147, 0.1)'
+                }}
               >
                 <div className="relative h-96 overflow-hidden">
                   <Image

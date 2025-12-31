@@ -231,6 +231,7 @@ export default function VideoHero() {
               className="border-2 border-soft-ivory text-soft-ivory font-semibold uppercase tracking-wider hover:bg-accent-pink hover:border-accent-pink hover:text-white active:bg-accent-pink active:border-accent-pink active:text-white transition-all relative"
               style={{ padding: 'clamp(0.75rem, 1.5vw, 1rem) clamp(1.5rem, 3vw, 2rem)', zIndex: 10000, fontFamily: "'Catchy Mager', 'Cormorant Garamond', 'Playfair Display', serif" }}
             >
+              <div className="absolute inset-0 backdrop-blur-md bg-black/20 rounded -z-10" />
               Our Services
             </a>
           </motion.div>

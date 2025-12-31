@@ -25,7 +25,7 @@
 
 @layer base {
   html {
-    /* scroll-behavior: smooth; - removed for better scroll performance */
+    scroll-behavior: smooth;
     margin: 0;
     padding: 0;
     font-size: clamp(14px, 1vw + 0.5rem, 16px); /* Fluid base font size */
@@ -124,13 +124,15 @@
     }
   }
 
-  /* Smooth scrolling - removed for better performance */
-  /* html {
-    scroll-behavior: smooth;
-  } */
-
   * {
     -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Smooth scrolling with performance optimization */
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
   }
 
   /* Performance optimizations */
@@ -138,6 +140,18 @@
     transform: translateZ(0);
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
+  }
+
+  /* Smooth scroll performance */
+  * {
+    scroll-behavior: inherit;
+  }
+
+  /* Optimize animations and transitions */
+  @media (prefers-reduced-motion: no-preference) {
+    * {
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    }
   }
 
   @keyframes pearlyGlow {

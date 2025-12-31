@@ -41,59 +41,71 @@ export default function Navigation() {
   ]
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-black/40 backdrop-blur-sm">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="flex items-center justify-between" style={{ height: 'clamp(3rem, 4vw, 3.5rem)' }}>
-          <Link href="/" className="flex items-center space-x-2">
-              <Image
-                src="/photos/whiteoslogo.png"
-                alt="Onyxspire"
-                width={180}
-                height={60}
-                className="w-auto transition-opacity duration-300"
-                style={{ height: 'clamp(2.5rem, 3vw, 3rem)' }}
-                priority
-                fetchPriority="high"
-                unoptimized
-              />
-          </Link>
+    <nav className="fixed top-0 left-0 right-0 z-50">
+      {/* Pink line on very top */}
+      <div className="h-0.5 bg-accent-pink w-full" />
+      
+      {/* Gradient that fades into video */}
+      <div 
+        className="relative"
+        style={{
+          background: 'linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.4) 30%, rgba(0, 0, 0, 0.2) 60%, transparent 100%)',
+          backdropFilter: 'blur(4px)',
+        }}
+      >
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="flex items-center justify-between" style={{ height: 'clamp(3rem, 4vw, 3.5rem)' }}>
+            <Link href="/" className="flex items-center space-x-2">
+                <Image
+                  src="/photos/whiteoslogo.png"
+                  alt="Onyxspire"
+                  width={180}
+                  height={60}
+                  className="w-auto transition-opacity duration-300"
+                  style={{ height: 'clamp(2.5rem, 3vw, 3rem)' }}
+                  priority
+                  fetchPriority="high"
+                  unoptimized
+                />
+            </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="transition-colors duration-300 font-medium uppercase tracking-wider text-white hover:text-accent-pink"
-                style={{ fontSize: 'clamp(0.625rem, 0.75vw + 0.125rem, 0.875rem)', fontFamily: "'Catchy Mager', 'Cormorant Garamond', 'Playfair Display', serif" }}
-              >
-                {link.href === '/application' ? 'Join Us' : link.label}
-              </Link>
-            ))}
-          </div>
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex items-center space-x-8">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="transition-colors duration-300 font-medium uppercase tracking-wider text-white hover:text-accent-pink"
+                  style={{ fontSize: 'clamp(0.625rem, 0.75vw + 0.125rem, 0.875rem)', fontFamily: "'Catchy Mager', 'Cormorant Garamond', 'Playfair Display', serif" }}
+                >
+                  {link.href === '/application' ? 'Join Us' : link.label}
+                </Link>
+              ))}
+            </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden transition-colors text-white hover:text-accent-pink"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
+            {/* Mobile Menu Button */}
+            <button
+              className="md:hidden transition-colors text-white hover:text-accent-pink"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label="Toggle menu"
             >
-              {isMobileMenuOpen ? (
-                <path d="M6 18L18 6M6 6l12 12" />
-              ) : (
-                <path d="M4 6h16M4 12h16M4 18h16" />
-              )}
-            </svg>
-          </button>
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                {isMobileMenuOpen ? (
+                  <path d="M6 18L18 6M6 6l12 12" />
+                ) : (
+                  <path d="M4 6h16M4 12h16M4 18h16" />
+                )}
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
 
@@ -122,9 +134,6 @@ export default function Navigation() {
           </motion.div>
         )}
       </AnimatePresence>
-      
-      {/* Pink bar under nav */}
-      <div className="h-0.5 bg-accent-pink w-full" />
     </nav>
   )
 }
