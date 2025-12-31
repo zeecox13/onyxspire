@@ -53,6 +53,7 @@ export default function Navigation() {
                 className="w-auto transition-opacity duration-300"
                 style={{ height: 'clamp(2.5rem, 3vw, 3rem)' }}
                 priority
+                fetchPriority="high"
                 unoptimized
               />
           </Link>

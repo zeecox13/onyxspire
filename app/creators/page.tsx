@@ -16,17 +16,17 @@ const topCreators = [
   {
     name: 'Alexia',
     username: 'alexia',
-    image: '/photos/alexiahomepage.png',
+    image: '/photos/alexia.png',
   },
   {
     name: 'Sartia',
     username: 'sartia',
-    image: '/photos/shay.png',
+    image: '/photos/sarita.png',
   },
   {
     name: 'Maggie',
     username: 'maggie',
-    image: '/photos/sjoy.png',
+    image: '/photos/maggie.png',
   },
 ]
 

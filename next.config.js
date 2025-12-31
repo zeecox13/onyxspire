@@ -14,6 +14,10 @@ const nextConfig = {
       },
     ],
   },
+  // Optimize loading performance
+  experimental: {
+    optimizePackageImports: ['framer-motion'],
+  },
 }
 
 module.exports = nextConfig

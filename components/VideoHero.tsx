@@ -37,19 +37,32 @@ export default function VideoHero() {
   }, [currentVideoIndex, setIsDarkVideo])
 
   useEffect(() => {
-    // Preload videos but only play the current one
-    const videos = videoRefs.current.filter(Boolean) as HTMLVideoElement[]
+    // Prioritize loading the first video immediately
+    const firstVideo = videoRefs.current[0]
+    if (firstVideo) {
+      firstVideo.load()
+      // Set preload to auto for first video to start loading immediately
+      firstVideo.preload = 'auto'
+    }
     
-    // Preload all videos
-    videos.forEach((video) => {
-      video.load()
-    })
+    // Preload other videos after a short delay to prioritize first video
+    const preloadTimer = setTimeout(() => {
+      const videos = videoRefs.current.filter(Boolean) as HTMLVideoElement[]
+      videos.forEach((video, index) => {
+        if (index > 0) {
+          video.load()
+        }
+      })
+    }, 100)
 
     const interval = setInterval(() => {
       setCurrentVideoIndex((prev) => (prev + 1) % videoSources.length)
     }, 8000) // Change video every 8 seconds
 
-    return () => clearInterval(interval)
+    return () => {
+      clearInterval(interval)
+      clearTimeout(preloadTimer)
+    }
   }, [])
 
   // Handle video playback when current video changes
@@ -81,7 +94,7 @@ export default function VideoHero() {
           muted
           loop
           playsInline
-          preload="metadata"
+          preload={index === 0 ? "auto" : "metadata"}
           className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ease-in-out ${
             index === currentVideoIndex ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'
           }`}
@@ -168,6 +181,7 @@ export default function VideoHero() {
                 height={200}
                 className="w-full max-w-4xl mx-auto h-auto"
                 priority
+                fetchPriority="high"
               />
             </div>
           </motion.div>

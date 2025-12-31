@@ -1,8 +1,14 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import Navigation from '@/components/Navigation'
-import Footer from '@/components/Footer'
 import { VideoProvider } from '@/contexts/VideoContext'
+import dynamic from 'next/dynamic'
+
+// Lazy load Footer - not critical for initial render
+const Footer = dynamic(() => import('@/components/Footer'), {
+  loading: () => null,
+  ssr: true,
+})
 
 export const metadata: Metadata = {
   title: 'Onyxspire Management | Premium Creator Management',

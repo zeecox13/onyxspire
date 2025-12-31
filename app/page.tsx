@@ -1,10 +1,16 @@
 'use client'
 
 import VideoHero from '@/components/VideoHero'
-import BrandRotator from '@/components/BrandRotator'
 import { motion, AnimatePresence } from 'framer-motion'
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
+import dynamic from 'next/dynamic'
+
+// Lazy load BrandRotator - load after hero videos
+const BrandRotator = dynamic(() => import('@/components/BrandRotator'), {
+  loading: () => null,
+  ssr: false,
+})
 
 export default function Home() {
   const stats = [
@@ -42,12 +48,12 @@ export default function Home() {
       {/* Pink bar separator under hero */}
       <div className="h-0.5 bg-accent-pink w-full" />
       
-      {/* Brand Rotator - moved up below hero */}
+      {/* Brand Rotator - lazy loaded after hero videos */}
       <div className="bg-transparent">
         <BrandRotator />
       </div>
       
-      {/* Why Choose Section */}
+      {/* Why Choose Section - lazy loaded */}
       <section id="why-choose" className="why-choose">
         <div className="why-inner">
           {/* Left model image */}
@@ -65,6 +71,7 @@ export default function Home() {
                 width={798}
                 height={1197}
                 className="why-model"
+                loading="lazy"
                 unoptimized
               />
             </motion.div>
@@ -161,6 +168,7 @@ export default function Home() {
                 width={599}
                 height={1197}
                 className="why-phone"
+                loading="lazy"
                 unoptimized
               />
             </motion.div>
@@ -390,6 +398,74 @@ export default function Home() {
                 </ul>
               </div>
             </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Creators Section */}
+      <section className="py-24 bg-transparent">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-black-espresso mb-4" style={{ fontFamily: "'Catchy Mager', 'Cormorant Garamond', 'Playfair Display', serif" }}>
+              Our Creators
+            </h2>
+            <p className="text-black-espresso/70 max-w-2xl mx-auto font-sans" style={{ fontSize: 'clamp(1rem, 1.5vw + 0.5rem, 1.25rem)' }}>
+              Meet the elite creators achieving unprecedented success with Onyxspire
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                name: 'Alexia',
+                username: 'alexia',
+                image: '/photos/alexia.png',
+              },
+              {
+                name: 'Sartia',
+                username: 'sartia',
+                image: '/photos/sarita.png',
+              },
+              {
+                name: 'Maggie',
+                username: 'maggie',
+                image: '/photos/maggie.png',
+              },
+            ].map((creator, index) => (
+              <motion.a
+                key={creator.name}
+                href={`/${creator.username}`}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: index * 0.15 }}
+                className="group relative bg-white rounded-[24px] border-2 border-accent-pink/35 shadow-xl hover:shadow-2xl hover:border-accent-pink/60 transition-all duration-500 hover:-translate-y-2 overflow-hidden cursor-pointer block"
+              >
+                <div className="relative h-96 overflow-hidden">
+                  <Image
+                    src={creator.image}
+                    alt={creator.name}
+                    fill
+                    className="object-cover object-top transition-transform duration-500 group-hover:scale-110"
+                    style={{ objectPosition: 'top' }}
+                    unoptimized
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-8">
+                    <h3 className="text-4xl font-bold text-white" style={{ fontFamily: "'Catchy Mager', 'Cormorant Garamond', 'Playfair Display', serif" }}>
+                      {creator.name}
+                    </h3>
+                  </div>
+                </div>
+              </motion.a>
+            ))}
           </div>
         </div>
       </section>
