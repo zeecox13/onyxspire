@@ -1,7 +1,28 @@
+'use client'
+
 import Link from 'next/link'
 import Image from 'next/image'
+import { usePathname } from 'next/navigation'
 
 export default function Footer() {
+  const pathname = usePathname()
+  
+  // Don't render footer on creator pages (single segment paths that aren't known routes)
+  const isCreatorPage = pathname && pathname !== '/' && 
+    !pathname.startsWith('/admin') && 
+    !pathname.startsWith('/blog') && 
+    !pathname.startsWith('/testimonials') && 
+    !pathname.startsWith('/creators') && 
+    !pathname.startsWith('/faq') && 
+    !pathname.startsWith('/application') &&
+    pathname.split('/').length === 2 && // Only one segment after the root
+    pathname.split('/')[1] && // Segment exists
+    !pathname.includes('.') // Not a file
+
+  if (isCreatorPage) {
+    return null
+  }
+
   return (
     <footer className="bg-transparent border-t border-accent-pink/20 mt-auto relative z-0">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-6">

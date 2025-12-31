@@ -16,6 +16,18 @@ export default function Navigation() {
   const pathname = usePathname()
   const { isDarkVideo } = useVideo()
   const isHomePage = pathname === '/'
+  
+  // Check if this is a creator page (single segment path that's not a known route)
+  const isCreatorPage = pathname && pathname !== '/' && 
+    !pathname.startsWith('/admin') && 
+    !pathname.startsWith('/blog') && 
+    !pathname.startsWith('/testimonials') && 
+    !pathname.startsWith('/creators') && 
+    !pathname.startsWith('/faq') && 
+    !pathname.startsWith('/application') &&
+    pathname.split('/').length === 2 && // Only one segment after the root
+    pathname.split('/')[1] && // Segment exists
+    !pathname.includes('.') // Not a file
 
   useEffect(() => {
     if (!isHomePage) {
@@ -56,6 +68,11 @@ export default function Navigation() {
     { href: '/faq', label: 'FAQ' },
     { href: '/application', label: 'Application' },
   ]
+
+  // Don't render navigation on creator pages
+  if (isCreatorPage) {
+    return null
+  }
 
   return (
     <nav className="fixed top-0 left-0 right-0" style={{ zIndex: 100 }}>

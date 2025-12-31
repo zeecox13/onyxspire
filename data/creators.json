@@ -10,7 +10,7 @@
     "links": [
       {
         "id": "1",
-        "label": "Join my OnlyFans",
+        "label": "OnlyFans",
         "url": "https://onlyfans.com/alexiabrea",
         "platform": "onlyfans",
         "isPrimary": true,
@@ -19,21 +19,75 @@
       },
       {
         "id": "2",
-        "label": "Instagram",
-        "url": "https://instagram.com/alexiabrea",
-        "platform": "instagram",
+        "label": "Fansly",
+        "url": "https://fansly.com/alexiabrea",
+        "platform": "fansly",
         "isPrimary": false,
         "isActive": true,
         "order": 2
       },
       {
         "id": "3",
-        "label": "Twitter",
-        "url": "https://twitter.com/alexiabrea",
-        "platform": "twitter",
+        "label": "SEXTPANTHER",
+        "url": "https://sextpanther.com/alexiabrea",
+        "platform": "sextpanther",
         "isPrimary": false,
         "isActive": true,
         "order": 3
+      },
+      {
+        "id": "4",
+        "label": "Instagram",
+        "url": "https://instagram.com/alexiabrea",
+        "platform": "instagram",
+        "isPrimary": false,
+        "isActive": true,
+        "order": 4
+      },
+      {
+        "id": "5",
+        "label": "TikTok",
+        "url": "https://tiktok.com/@alexiabrea",
+        "platform": "tiktok",
+        "isPrimary": false,
+        "isActive": true,
+        "order": 5
+      },
+      {
+        "id": "6",
+        "label": "X",
+        "url": "https://x.com/alexiabrea",
+        "platform": "x",
+        "isPrimary": false,
+        "isActive": true,
+        "order": 6
+      },
+      {
+        "id": "7",
+        "label": "Pinterest",
+        "url": "https://pinterest.com/alexiabrea",
+        "platform": "pinterest",
+        "isPrimary": false,
+        "isActive": true,
+        "order": 7
+      },
+      {
+        "id": "8",
+        "label": "YouTube",
+        "url": "https://youtube.com/@alexiabrea",
+        "platform": "youtube",
+        "isPrimary": false,
+        "isActive": true,
+        "order": 8
+      },
+      {
+        "id": "9",
+        "label": "Etsy",
+        "url": "https://etsy.com/shop/alexiabrea",
+        "platform": "etsy",
+        "isPrimary": false,
+        "isActive": true,
+        "order": 9
       }
     ]
   }
