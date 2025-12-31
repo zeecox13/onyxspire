@@ -92,7 +92,7 @@ export default function Creators() {
       </section>
 
       {/* Top Creators Showcase */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-transparent">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -139,7 +139,7 @@ export default function Creators() {
       </section>
 
       {/* Success Factors */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-transparent">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
