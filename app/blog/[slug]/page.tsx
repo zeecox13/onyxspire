@@ -15,231 +15,330 @@ const blogPosts: Record<string, {
 }> = {
   'mental-health-adult-creator-industry': {
     id: '1',
-    title: 'Mental Health in the Adult Creator Industry: Let\'s Talk About It',
-    excerpt: 'An honest conversation about the emotional reality of being an adult creator, with practical strategies for protecting your wellbeing.',
+    title: 'Creator Burnout',
+    excerpt: 'An honest, warm conversation about the mental health side of being an adult creator. Because it\'s not just you. This job is a lot. From emotional whiplash and burnout that doesn\'t always look like exhaustion, to parasocial relationships and isolation even when you have fans, we explore how to take care of your mental health with intention, not perfection.',
     date: 'November 15, 2025',
     slug: 'mental-health-adult-creator-industry',
     category: 'Wellness',
     content: `
       <p class="mb-6 text-soft-ivory/80 leading-relaxed">
-        Being an adult creator can be empowering, creative, and financially liberating. It can also be emotionally complex, isolating, and mentally exhausting. Most conversations focus on growth and income, yet the human experience behind the screen often goes unspoken.
+        Being an adult creator is a wild experience.
       </p>
       <p class="mb-6 text-soft-ivory/80 leading-relaxed">
-        It is time to change that.
+        On one hand, you get flexibility, creativity, financial potential, and the ability to build something that is truly yours.
       </p>
       <p class="mb-6 text-soft-ivory/80 leading-relaxed">
-        This post exists to hold space for adult creators. To normalize what you may be feeling, help you build healthier systems, and remind you that your wellbeing matters just as much as your revenue.
+        On the other hand, your job sometimes involves juggling emotional labor, social stigma, parasocial relationships, inconsistent income, late night DMs, and the occasional identity crisis while wearing sweatpants and eating cereal at 2 a.m.
+      </p>
+      <p class="mb-6 text-soft-ivory/80 leading-relaxed font-semibold">
+        If you have ever thought, "Is it just me, or is this… a lot?"
+      </p>
+      <p class="mb-6 text-soft-ivory/80 leading-relaxed font-semibold">
+        It is not just you.
+      </p>
+      <p class="mb-6 text-soft-ivory/80 leading-relaxed">
+        Let's talk about the mental health side of being an adult creator. Honestly. Warmly. And with zero judgment.
       </p>
 
-      <h2 class="text-3xl font-serif font-bold text-soft-ivory mb-4 mt-12">The Emotional Reality of Being an Adult Creator</h2>
-      <p class="mb-6 text-soft-ivory/80 leading-relaxed">
-        Many creators share similar mental health challenges, even if no one talks about them publicly.
-      </p>
-
-      <h3 class="text-2xl font-serif font-bold text-soft-ivory mb-4 mt-8">Burnout and Emotional Fatigue</h3>
+      <h2 class="text-3xl font-serif font-bold text-soft-ivory mb-4 mt-12">The Emotional Whiplash Is Real</h2>
       <p class="mb-4 text-soft-ivory/80 leading-relaxed">
-        Creators often carry the weight of constant messaging, emotional labor, performance expectations, and pressure to always be available.
+        One day you are up.
       </p>
       <p class="mb-4 text-soft-ivory/80 leading-relaxed">
-        Burnout in this space can look like:
+        The next day you are refreshing stats wondering if your entire fanbase fell into a sinkhole.
       </p>
-      <ul class="mb-6 text-soft-ivory/80 leading-relaxed list-disc list-inside space-y-2">
-        <li>Feeling emotionally numb or disconnected</li>
-        <li>Dreading logging in</li>
-        <li>Losing motivation or creativity</li>
-        <li>Crashing after high revenue periods</li>
+      <p class="mb-4 text-soft-ivory/80 leading-relaxed">
+        You can experience:
+      </p>
+      <ul class="mb-4 text-soft-ivory/80 leading-relaxed list-disc list-inside space-y-2">
+        <li>excitement</li>
+        <li>burnout</li>
+        <li>validation</li>
+        <li>shame</li>
+        <li>loneliness</li>
+        <li>overstimulation</li>
+        <li>pride</li>
+        <li>fear</li>
+        <li>exhaustion</li>
       </ul>
       <p class="mb-6 text-soft-ivory/80 leading-relaxed">
-        This is not weakness. It is your nervous system telling you that you are overloaded.
+        Sometimes all before lunch.
+      </p>
+      <p class="mb-6 text-soft-ivory/80 leading-relaxed">
+        That doesn't mean you're unstable. It means you're human in a job that mixes intimacy, performance, commerce, fantasy, and real life in a very concentrated way.
+      </p>
+      <p class="mb-6 text-soft-ivory/80 leading-relaxed font-semibold">
+        Of course that has an emotional impact.
       </p>
 
       <div class="my-8">
         <img src="/blog/mental-health-adult-creator-industry/pexels-cottonbro-3778550.jpg" alt="Creator working" class="w-full h-auto rounded-lg max-h-64 object-cover" />
       </div>
 
-      <h3 class="text-2xl font-serif font-bold text-soft-ivory mb-4 mt-8">Parasocial Relationships and Emotional Boundaries</h3>
+      <h2 class="text-3xl font-serif font-bold text-soft-ivory mb-4 mt-12">Burnout Doesn't Always Look Like Exhaustion</h2>
       <p class="mb-4 text-soft-ivory/80 leading-relaxed">
-        Fans may sometimes forget there is a real human being on the other side of the screen. Over-attachment, entitlement, jealousy, and emotional dependence can place very real strain on creators.
+        Sometimes burnout looks like:
+      </p>
+      <ul class="mb-4 text-soft-ivory/80 leading-relaxed list-disc list-inside space-y-2">
+        <li>feeling numb instead of excited</li>
+        <li>avoiding logging in</li>
+        <li>struggling to create</li>
+        <li>feeling like every message is a chore</li>
+        <li>running on autopilot</li>
+        <li>quietly wondering how long you can keep this up</li>
+      </ul>
+      <p class="mb-6 text-soft-ivory/80 leading-relaxed font-semibold">
+        This doesn't mean you're weak. It means your nervous system is waving a little flag saying, "Hi. Too much stimulation. Please send boundaries."
+      </p>
+      <p class="mb-6 text-soft-ivory/80 leading-relaxed">
+        Creators tend to push through instead of slowing down. But rest is not optional. Eventually, your brain sends the bill.
+      </p>
+
+      <h2 class="text-3xl font-serif font-bold text-soft-ivory mb-4 mt-12">Parasocial Relationships Are Complicated</h2>
+      <p class="mb-4 text-soft-ivory/80 leading-relaxed">
+        Fans are real people with real feelings. And sometimes those feelings get… intense.
+      </p>
+      <p class="mb-4 text-soft-ivory/80 leading-relaxed">
+        You are not only a performer. You become:
+      </p>
+      <ul class="mb-4 text-soft-ivory/80 leading-relaxed list-disc list-inside space-y-2">
+        <li>a confidant</li>
+        <li>a fantasy</li>
+        <li>an outlet</li>
+        <li>an emotional anchor</li>
+        <li>sometimes the only consistent presence in someone's life</li>
+      </ul>
+      <p class="mb-6 text-soft-ivory/80 leading-relaxed">
+        That is a lot of pressure for one person. Especially when you also have your own feelings, life, and problems.
       </p>
       <p class="mb-6 text-soft-ivory/80 leading-relaxed font-semibold">
-        Setting boundaries is not rude. It is protective.
+        You're allowed to set emotional boundaries without being cruel. You don't have to be available 24/7. You don't have to absorb someone's entire world.
+      </p>
+      <p class="mb-6 text-soft-ivory/80 leading-relaxed font-semibold">
+        You are a creator. Not a replacement for therapy.
       </p>
 
-      <h3 class="text-2xl font-serif font-bold text-soft-ivory mb-4 mt-8">Stigma, Judgment, and Shame</h3>
+      <h2 class="text-3xl font-serif font-bold text-soft-ivory mb-4 mt-12">Stigma Stings Even When You're Strong</h2>
       <p class="mb-4 text-soft-ivory/80 leading-relaxed">
-        Many creators experience:
+        You could be the most confident, self aware creator alive, and still feel the sting of:
       </p>
       <ul class="mb-4 text-soft-ivory/80 leading-relaxed list-disc list-inside space-y-2">
-        <li>Fear of being "found out"</li>
-        <li>Anxiety about family or relationships</li>
-        <li>Internalized shame due to societal biases</li>
-        <li>Feeling misunderstood or unsafe</li>
+        <li>judgment</li>
+        <li>assumptions</li>
+        <li>double standards</li>
+        <li>fear of being outed</li>
+        <li>anxiety about relationships or family</li>
+        <li>worry about your future</li>
       </ul>
       <p class="mb-6 text-soft-ivory/80 leading-relaxed">
-        This is heavy. And it is valid. You deserve support and respect just like anyone else.
+        It is completely normal to hold both truths at the same time:
+      </p>
+      <p class="mb-4 text-soft-ivory/80 leading-relaxed italic">
+        "I love what I do."
+      </p>
+      <p class="mb-4 text-soft-ivory/80 leading-relaxed italic">
+        "I sometimes feel unsafe or judged because of it."
+      </p>
+      <p class="mb-6 text-soft-ivory/80 leading-relaxed">
+        And you deserve spaces where both of those thoughts are allowed to exist without debate.
       </p>
 
-      <h3 class="text-2xl font-serif font-bold text-soft-ivory mb-4 mt-8">Financial Instability and Pressure to Perform</h3>
+      <h2 class="text-3xl font-serif font-bold text-soft-ivory mb-4 mt-12">Money Stress Makes Everything Heavier</h2>
       <p class="mb-4 text-soft-ivory/80 leading-relaxed">
-        Content platforms can change overnight. Subscriptions fluctuate. Algorithms shift. As a result, creators often live with:
+        There is nothing like inconsistent income to make your brain spiral at 3 a.m.
+      </p>
+      <p class="mb-4 text-soft-ivory/80 leading-relaxed">
+        Income fluctuations do not just affect your bank account. They affect:
       </p>
       <ul class="mb-4 text-soft-ivory/80 leading-relaxed list-disc list-inside space-y-2">
-        <li>Income unpredictability</li>
-        <li>Fear of losing momentum</li>
-        <li>Pressure to constantly create</li>
+        <li>your sleep</li>
+        <li>your relationships</li>
+        <li>your confidence</li>
+        <li>your mental health</li>
       </ul>
       <p class="mb-6 text-soft-ivory/80 leading-relaxed">
-        That level of uncertainty impacts mental health, even when you are successful.
+        And yes, the platform economy is unpredictable. Which means stability often comes from how you structure your business and support system, not just how much you earn.
+      </p>
+      <p class="mb-6 text-soft-ivory/80 leading-relaxed font-semibold">
+        It is okay to say out loud that financial stress affects your mental state. Because it does.
       </p>
 
-      <h3 class="text-2xl font-serif font-bold text-soft-ivory mb-4 mt-8">Isolation and Loneliness</h3>
+      <h2 class="text-3xl font-serif font-bold text-soft-ivory mb-4 mt-12">Isolation Is Common (Even If You Have Fans)</h2>
       <p class="mb-4 text-soft-ivory/80 leading-relaxed">
-        Working online, especially when secrecy is necessary, can shrink your support system.
+        You can talk to thousands of people a day and still feel lonely.
       </p>
-      <p class="mb-6 text-soft-ivory/80 leading-relaxed italic">
-        "I do not feel like I can talk to anyone about my job."
+      <p class="mb-4 text-soft-ivory/80 leading-relaxed">
+        Especially if:
       </p>
-      <p class="mb-6 text-soft-ivory/80 leading-relaxed">
-        That isolation compounds stress.
+      <ul class="mb-4 text-soft-ivory/80 leading-relaxed list-disc list-inside space-y-2">
+        <li>you can't fully talk about your work openly</li>
+        <li>your friends don't understand the industry</li>
+        <li>you feel like you always have to be "on"</li>
+        <li>privacy stops you from sharing details</li>
+        <li>others minimize your struggles because your job "looks easy"</li>
+      </ul>
+      <p class="mb-6 text-soft-ivory/80 leading-relaxed font-semibold">
+        Humans need connection where they can drop the performance mask. Even creators.
+      </p>
+      <p class="mb-6 text-soft-ivory/80 leading-relaxed font-semibold">
+        Especially creators.
       </p>
 
       <div class="my-8">
         <img src="/blog/mental-health-adult-creator-industry/pexels-roman-odintsov-8244390.jpg" alt="Support and community" class="w-full h-auto rounded-lg max-h-64 object-cover" />
       </div>
 
-      <h2 class="text-3xl font-serif font-bold text-soft-ivory mb-4 mt-12">Your Mental Health Matters. Here's What Helps</h2>
+      <h2 class="text-3xl font-serif font-bold text-soft-ivory mb-4 mt-12">So How Do You Take Care of Your Mental Health?</h2>
+      <p class="mb-6 text-soft-ivory/80 leading-relaxed font-semibold">
+        Not with perfection. Just with intention.
+      </p>
       <p class="mb-6 text-soft-ivory/80 leading-relaxed">
-        None of these are quick fixes, but they are supportive practices that make a meaningful difference.
+        Here are some gentle, real world supports.
       </p>
 
-      <h3 class="text-2xl font-serif font-bold text-soft-ivory mb-4 mt-8">1. Create Clear Work Boundaries</h3>
-      <p class="mb-4 text-soft-ivory/80 leading-relaxed font-semibold">
-        You are allowed to have limits.
-      </p>
+      <h3 class="text-2xl font-serif font-bold text-soft-ivory mb-4 mt-8">Create Actual Boundaries (Not Just Theoretical Ones)</h3>
       <p class="mb-4 text-soft-ivory/80 leading-relaxed">
-        Examples include:
+        You are allowed to:
       </p>
       <ul class="mb-4 text-soft-ivory/80 leading-relaxed list-disc list-inside space-y-2">
-        <li>Define messaging hours</li>
-        <li>Keep work and personal platforms separate</li>
-        <li>Create emotional scripts so you are not always performing</li>
-        <li>Take full days off without guilt</li>
+        <li>have messaging hours</li>
+        <li>take days off</li>
+        <li>not respond immediately</li>
+        <li>protect your privacy</li>
+        <li>say no when something doesn't feel right</li>
+        <li>pause before reacting</li>
       </ul>
-      <p class="mb-6 text-soft-ivory/80 leading-relaxed">
-        Boundaries protect you and extend your career longevity.
-      </p>
-
-      <h3 class="text-2xl font-serif font-bold text-soft-ivory mb-4 mt-8">2. Build a Supportive Circle</h3>
-      <p class="mb-4 text-soft-ivory/80 leading-relaxed">
-        If you can, surround yourself with at least one person who sees you, not just your job.
-      </p>
-      <p class="mb-4 text-soft-ivory/80 leading-relaxed">
-        This may be:
-      </p>
-      <ul class="mb-4 text-soft-ivory/80 leading-relaxed list-disc list-inside space-y-2">
-        <li>A trusted partner or friend</li>
-        <li>A therapist familiar with sex-work-adjacent industries</li>
-        <li>Ethical creator communities</li>
-        <li>A management team that protects your wellbeing, not just profits</li>
-      </ul>
-      <p class="mb-6 text-soft-ivory/80 leading-relaxed">
-        You should never have to carry everything alone.
-      </p>
-
-      <h3 class="text-2xl font-serif font-bold text-soft-ivory mb-4 mt-8">3. Normalize Talking About Feelings</h3>
-      <p class="mb-4 text-soft-ivory/80 leading-relaxed">
-        You do not have to be strong all the time.
-      </p>
-      <p class="mb-4 text-soft-ivory/80 leading-relaxed">
-        Stress, fear, overwhelm, guilt, joy, empowerment, and fatigue can all exist together.
-      </p>
-      <p class="mb-6 text-soft-ivory/80 leading-relaxed">
-        Your emotions do not define your worth. They simply show you what needs care.
-      </p>
-
-      <h3 class="text-2xl font-serif font-bold text-soft-ivory mb-4 mt-8">4. Prioritize Nervous System Regulation</h3>
-      <p class="mb-4 text-soft-ivory/80 leading-relaxed">
-        Simple grounding habits go a long way:
-      </p>
-      <ul class="mb-4 text-soft-ivory/80 leading-relaxed list-disc list-inside space-y-2">
-        <li>Eat real meals</li>
-        <li>Sleep before scrolling</li>
-        <li>Stretch and move your body</li>
-        <li>Step outside daily</li>
-        <li>Limit late night messaging when possible</li>
-      </ul>
-      <p class="mb-6 text-soft-ivory/80 leading-relaxed">
-        Your body is your business, and also your home.
-      </p>
-
-      <h3 class="text-2xl font-serif font-bold text-soft-ivory mb-4 mt-8">5. Separate Your Identity From Your Persona</h3>
-      <p class="mb-4 text-soft-ivory/80 leading-relaxed">
-        Your creator persona is a role you play. Your real self is private and deserves protection.
-      </p>
-      <p class="mb-6 text-soft-ivory/80 leading-relaxed">
-        Blending the two too deeply can harm self-image, so create intentional emotional separation and privacy buffers.
-      </p>
-
-      <h3 class="text-2xl font-serif font-bold text-soft-ivory mb-4 mt-8">6. Seek Professional Help When Needed</h3>
-      <p class="mb-4 text-soft-ivory/80 leading-relaxed">
-        If you are struggling with depression, anxiety, trauma, or thoughts of self-harm, support exists. A therapist with experience in sex-positive or stigma-aware care can make a world of difference.
-      </p>
-      <p class="mb-4 text-soft-ivory/80 leading-relaxed">
-        If you ever feel unsafe or overwhelmed, please reach out to a trusted support resource or your local crisis line.
+      <p class="mb-6 text-soft-ivory/80 leading-relaxed font-semibold">
+        Boundaries don't reduce income in the long run.
       </p>
       <p class="mb-6 text-soft-ivory/80 leading-relaxed font-semibold">
-        You are never too strong to need help.
+        They protect your ability to stay in the industry long enough to succeed.
       </p>
 
-      <h2 class="text-3xl font-serif font-bold text-soft-ivory mb-4 mt-12">You Are More Than Your Metrics</h2>
+      <h3 class="text-2xl font-serif font-bold text-soft-ivory mb-4 mt-8">Separate Your Self Worth From Your Stats</h3>
       <p class="mb-4 text-soft-ivory/80 leading-relaxed">
-        Your value is not defined by:
+        Numbers reflect behavior and systems, not your value as a human.
       </p>
-      <ul class="mb-4 text-soft-ivory/80 leading-relaxed list-disc list-inside space-y-2">
-        <li>Your subscriber count</li>
-        <li>Your engagement stats</li>
-        <li>Your PPV revenue</li>
-        <li>Your latest month's total</li>
-      </ul>
-      <p class="mb-6 text-soft-ivory/80 leading-relaxed">
-        You are a complete human with dignity, depth, and dreams.
+      <p class="mb-4 text-soft-ivory/80 leading-relaxed">
+        If your brain tries to tell you:
+      </p>
+      <p class="mb-4 text-soft-ivory/80 leading-relaxed italic">
+        "Sales dipped. Therefore I am failing as a person."
+      </p>
+      <p class="mb-4 text-soft-ivory/80 leading-relaxed">
+        You are officially allowed to reply:
+      </p>
+      <p class="mb-4 text-soft-ivory/80 leading-relaxed italic">
+        "No. Sales dipped. That is a business data point. I am still a human who deserves rest and snacks."
       </p>
       <p class="mb-6 text-soft-ivory/80 leading-relaxed font-semibold">
-        Protecting your mental health is not optional. It is essential.
+        Kindness toward yourself is not optional. It is maintenance.
       </p>
 
-      <h2 class="text-3xl font-serif font-bold text-soft-ivory mb-4 mt-12">Our Promise at Onyxspire</h2>
+      <h3 class="text-2xl font-serif font-bold text-soft-ivory mb-4 mt-8">Build a Real Support System</h3>
       <p class="mb-4 text-soft-ivory/80 leading-relaxed">
-        We believe in supporting creators as whole humans, not revenue sources.
+        Find at least one person who knows the real you.
       </p>
       <p class="mb-4 text-soft-ivory/80 leading-relaxed">
-        That means:
+        Maybe that is:
       </p>
       <ul class="mb-4 text-soft-ivory/80 leading-relaxed list-disc list-inside space-y-2">
-        <li>Ethical business strategy</li>
-        <li>Clear boundaries</li>
-        <li>Sustainable systems</li>
-        <li>Emotional respect</li>
-        <li>Safety first decision-making</li>
+        <li>a friend</li>
+        <li>a partner</li>
+        <li>a therapist</li>
+        <li>an industry peer</li>
+        <li>a manager who respects boundaries</li>
+        <li>a community that is not judgmental</li>
       </ul>
-      <p class="mb-6 text-soft-ivory/80 leading-relaxed">
-        You deserve a team that protects your peace as much as your profits.
+      <p class="mb-6 text-soft-ivory/80 leading-relaxed font-semibold">
+        You do not have to do this alone. And you shouldn't.
       </p>
 
-      <h2 class="text-3xl font-serif font-bold text-soft-ivory mb-4 mt-12">If This Spoke to You</h2>
+      <h3 class="text-2xl font-serif font-bold text-soft-ivory mb-4 mt-8">Give Your Nervous System a Chance to Reset</h3>
       <p class="mb-4 text-soft-ivory/80 leading-relaxed">
-        If you are an adult creator who wants support, stability, strategy, and a team that prioritizes your wellbeing, we would love to talk.
+        Simple things matter more than people think.
+      </p>
+      <p class="mb-4 text-soft-ivory/80 leading-relaxed">
+        Eat.<br>
+        Sleep.<br>
+        Drink water.<br>
+        Stretch.<br>
+        Go outside.<br>
+        Get sunlight.<br>
+        Touch grass.<br>
+        Touch your pillow.<br>
+        Touch silence.
       </p>
       <p class="mb-6 text-soft-ivory/80 leading-relaxed font-semibold">
-        You do not have to do this alone.
+        Your brain is not a machine. It needs breaks from stimulation.
+      </p>
+      <p class="mb-6 text-soft-ivory/80 leading-relaxed font-semibold">
+        And no, scrolling does not count as rest.
+      </p>
+
+      <h3 class="text-2xl font-serif font-bold text-soft-ivory mb-4 mt-8">Consider Professional Mental Health Support If You Need It</h3>
+      <p class="mb-4 text-soft-ivory/80 leading-relaxed">
+        Therapists who are sex-positive and stigma aware exist. They will not shame you. They will not lecture you. They will talk to you like a human navigating a complicated job.
+      </p>
+      <p class="mb-6 text-soft-ivory/80 leading-relaxed font-semibold">
+        There is nothing weak about asking for support. In fact, it takes a lot of strength.
       </p>
       <p class="mb-6 text-soft-ivory/80 leading-relaxed">
-        Apply to work with Onyxspire.
+        If you ever feel unsafe, overwhelmed, or hopeless, please reach out to a professional or crisis resource in your area.
+      </p>
+      <p class="mb-6 text-soft-ivory/80 leading-relaxed font-semibold">
+        You matter outside of this industry.
+      </p>
+
+      <h2 class="text-3xl font-serif font-bold text-soft-ivory mb-4 mt-12">You Are More Than Your Content</h2>
+      <p class="mb-4 text-soft-ivory/80 leading-relaxed">
+        More than:
+      </p>
+      <ul class="mb-4 text-soft-ivory/80 leading-relaxed list-disc list-inside space-y-2">
+        <li>your photos</li>
+        <li>your sales</li>
+        <li>your persona</li>
+        <li>your popularity</li>
+      </ul>
+      <p class="mb-6 text-soft-ivory/80 leading-relaxed font-semibold">
+        You are a full human being whose wellbeing matters.
+      </p>
+      <p class="mb-4 text-soft-ivory/80 leading-relaxed">
+        Not because you perform.
+      </p>
+      <p class="mb-4 text-soft-ivory/80 leading-relaxed">
+        Not because you produce.
+      </p>
+      <p class="mb-6 text-soft-ivory/80 leading-relaxed font-semibold">
+        Just because you exist.
+      </p>
+      <p class="mb-6 text-soft-ivory/80 leading-relaxed font-semibold">
+        And that will always be true.
+      </p>
+
+      <h2 class="text-3xl font-serif font-bold text-soft-ivory mb-4 mt-12">How We Approach This at Onyxspire</h2>
+      <p class="mb-4 text-soft-ivory/80 leading-relaxed">
+        At Onyxspire, we believe that creators deserve structure, boundaries, stability, and respect.
+      </p>
+      <p class="mb-6 text-soft-ivory/80 leading-relaxed font-semibold">
+        Your mental health is not an inconvenience. It is a priority.
+      </p>
+      <p class="mb-4 text-soft-ivory/80 leading-relaxed">
+        We support creators with strategy and systems, yes. But we also support the human being behind the page. Because the business only works when you are okay.
+      </p>
+      <p class="mb-6 text-soft-ivory/80 leading-relaxed">
+        If you want help building sustainable success without losing yourself in the process, we would love to talk.
+      </p>
+      <p class="mb-6 text-soft-ivory/80 leading-relaxed">
+        Apply to work with Onyxspire or ask about OFM consulting.
+      </p>
+      <p class="mb-6 text-soft-ivory/80 leading-relaxed font-semibold">
+        You do not have to carry everything alone.
       </p>
 
       <div class="mt-12 p-6 bg-soft-ivory/10 rounded-lg border-l-4 border-bronze-gold">
         <p class="text-soft-ivory/90 leading-relaxed font-semibold">
-          Important Note: This post is not medical advice. If you are struggling or feel unsafe, please reach out to a qualified mental health professional or local support services.
+          A Caring Note: This article is for emotional support and education. It is not a substitute for professional mental health care. If you are struggling or feel unsafe, please reach out to a qualified mental health professional or local crisis support.
         </p>
       </div>
     `,
@@ -513,234 +612,262 @@ const blogPosts: Record<string, {
   'financial-planning-for-creators': {
     id: '3',
     title: 'Financial Planning for Creators: Taxes, Savings and Stability',
-    excerpt: 'A comprehensive guide to money management for adult creators, covering taxes, savings, and building financial stability for a sustainable career.',
+    excerpt: 'A comprehensive guide to money management for adult creators, covering taxes, savings, and building financial stability for a sustainable career. Learn how to set aside taxes properly, build emergency funds, pay yourself like a CEO, and create systems that give you peace of mind instead of panic. No finance bro jargon, just real talk from someone who gets it.',
     date: 'November 5, 2025',
     slug: 'financial-planning-for-creators',
     category: 'Finance',
     content: `
+      <h2 class="text-3xl font-serif font-bold text-soft-ivory mb-4 mt-12">Money, Taxes, Panic, and Peace of Mind</h2>
       <p class="mb-6 text-soft-ivory/80 leading-relaxed">
-        Earning money as a creator can feel exciting, empowering, and freeing. It can also feel unpredictable. One month may be incredible. The next may be quiet. And unlike traditional jobs, there is rarely an HR department reminding you to save for taxes, retirement, or emergencies.
-      </p>
-      <p class="mb-6 text-soft-ivory/80 leading-relaxed">
-        Financial stability is one of the most important foundations for a sustainable creator career. This guide will walk through the basics of money management for adult creators, so you can build security, reduce stress, and keep your business strong for the long term.
-      </p>
-      <p class="mb-6 text-soft-ivory/60 leading-relaxed text-sm italic">
-        This is educational information, not legal or financial advice. Always consult a qualified professional for your specific situation.
-      </p>
-
-      <h2 class="text-3xl font-serif font-bold text-soft-ivory mb-4 mt-12">Understanding Your Income as a Creator</h2>
-      <div class="my-8">
-        <img src="/blog/financial-planning-for-creators/taxes.jpg" alt="Financial planning and taxes" class="w-full h-auto rounded-lg max-h-64 object-cover" />
-      </div>
-      <p class="mb-4 text-soft-ivory/80 leading-relaxed">
-        Most creators are considered independent contractors or self employed. That means:
-      </p>
-      <ul class="mb-4 text-soft-ivory/80 leading-relaxed list-disc list-inside space-y-2">
-        <li>You are responsible for your own taxes</li>
-        <li>You do not have employer provided benefits</li>
-        <li>Your income is likely to fluctuate month to month</li>
-      </ul>
-      <p class="mb-4 text-soft-ivory/80 leading-relaxed">
-        Because your earnings are variable, planning becomes essential.
-      </p>
-      <p class="mb-6 text-soft-ivory/80 leading-relaxed font-semibold">
-        Stability does not come from how much you make. Stability comes from how you manage what you make.
-      </p>
-
-      <h2 class="text-3xl font-serif font-bold text-soft-ivory mb-4 mt-12">Taxes: What Creators Need To Know</h2>
-      <p class="mb-4 text-soft-ivory/80 leading-relaxed">
-        Taxes are one of the biggest sources of stress for creators, especially new ones. The key is to treat taxes like a bill you pay all year, not a surprise in April.
-      </p>
-
-      <h3 class="text-2xl font-serif font-bold text-soft-ivory mb-4 mt-8">Set aside a percentage from every payout</h3>
-      <p class="mb-4 text-soft-ivory/80 leading-relaxed">
-        A common recommendation is to save 25 to 35 percent of your income for taxes, depending on your country, state, and deductions. This usually covers:
-      </p>
-      <ul class="mb-4 text-soft-ivory/80 leading-relaxed list-disc list-inside space-y-2">
-        <li>Federal income tax</li>
-        <li>State income tax (if applicable)</li>
-        <li>Self employment tax</li>
-        <li>Local taxes (if applicable)</li>
-      </ul>
-      <p class="mb-6 text-soft-ivory/80 leading-relaxed">
-        Many creators find it helpful to move this money into a completely separate bank account so it is not accidentally spent.
-      </p>
-
-      <h3 class="text-2xl font-serif font-bold text-soft-ivory mb-4 mt-8">Track your expenses</h3>
-      <p class="mb-4 text-soft-ivory/80 leading-relaxed">
-        As a business owner, many legitimate business expenses may be tax deductible. Examples often include:
-      </p>
-      <ul class="mb-4 text-soft-ivory/80 leading-relaxed list-disc list-inside space-y-2">
-        <li>Content production costs</li>
-        <li>Equipment such as cameras, lighting, computers</li>
-        <li>Editing software</li>
-        <li>Paid promotion or ads</li>
-        <li>Website costs</li>
-        <li>Agency or management fees</li>
-        <li>Work related travel</li>
-        <li>Home office or studio costs</li>
-        <li>Professional services</li>
-        <li>Props, wardrobe, hair, makeup used for content</li>
-      </ul>
-      <p class="mb-4 text-soft-ivory/80 leading-relaxed">
-        Good bookkeeping can significantly reduce your taxable income. Keep receipts, organize transactions, and consider using basic accounting software.
-      </p>
-
-      <h3 class="text-2xl font-serif font-bold text-soft-ivory mb-4 mt-8">Consider quarterly estimated taxes</h3>
-      <p class="mb-4 text-soft-ivory/80 leading-relaxed">
-        In many countries, self employed workers are required to pay estimated taxes quarterly. Failing to do so can lead to penalties.
+        Let's talk about money.
       </p>
       <p class="mb-6 text-soft-ivory/80 leading-relaxed">
-        A tax professional can help you plan these payments accurately.
-      </p>
-
-      <h2 class="text-3xl font-serif font-bold text-soft-ivory mb-4 mt-12">Building Stability Through Savings</h2>
-      <p class="mb-4 text-soft-ivory/80 leading-relaxed">
-        Because creator income fluctuates, savings are not optional. Savings are your safety net.
+        And before your stomach drops, breathe. I am not here to lecture you. I am here as that friend who will lovingly say, "Hey, maybe we should not wait until tax season to realize we owe the government the equivalent of a small car."
       </p>
       <p class="mb-6 text-soft-ivory/80 leading-relaxed">
-        Here are three types of savings every creator should consider.
+        Being a creator is fun and freeing and empowering and also financially chaotic if you do not plan ahead. Unlike a normal job, you do not get a neat little paycheck with taxes already handled. You get a delicious lump sum and then have to act like an adult about it.
       </p>
-
-      <h3 class="text-2xl font-serif font-bold text-soft-ivory mb-4 mt-8">1. Emergency Fund</h3>
-      <p class="mb-4 text-soft-ivory/80 leading-relaxed">
-        This is money set aside only for true emergencies, such as:
-      </p>
-      <ul class="mb-4 text-soft-ivory/80 leading-relaxed list-disc list-inside space-y-2">
-        <li>Medical expenses</li>
-        <li>Sudden income loss</li>
-        <li>Family emergencies</li>
-        <li>Surprise bills</li>
-      </ul>
-      <p class="mb-4 text-soft-ivory/80 leading-relaxed">
-        A common goal is 3 to 6 months of living expenses. If that feels impossible right now, start small. Even 200 dollars. Then 1,000. Then keep building.
-      </p>
-      <p class="mb-6 text-soft-ivory/80 leading-relaxed font-semibold">
-        Small consistent deposits matter.
-      </p>
-
-      <h3 class="text-2xl font-serif font-bold text-soft-ivory mb-4 mt-8">2. Tax Savings</h3>
       <p class="mb-6 text-soft-ivory/80 leading-relaxed">
-        As mentioned above, treat tax money as untouchable. Move it out of your main account immediately. This prevents panic later.
+        And sometimes we do not. And that is okay. We learn. We grow. We build spreadsheets. We cry a little. Then we get intentional.
+      </p>
+      <p class="mb-6 text-soft-ivory/80 leading-relaxed">
+        This is your gentle guide to staying financially sane as a creator. No fear tactics. No boring jargon. Just real talk and solid plans.
       </p>
 
-      <h3 class="text-2xl font-serif font-bold text-soft-ivory mb-4 mt-8">3. Business Operating Savings</h3>
-      <p class="mb-4 text-soft-ivory/80 leading-relaxed">
-        This is money saved for:
+      <h2 class="text-3xl font-serif font-bold text-soft-ivory mb-4 mt-12">First: Let's Accept The Truth About Creator Income</h2>
+      <p class="mb-6 text-soft-ivory/80 leading-relaxed">
+        Creator money is like the ocean. Sometimes calm. Sometimes wild. Sometimes suspiciously quiet. One month you are thriving. The next month you are like… hello? Is anyone out there?
+      </p>
+      <p class="mb-6 text-soft-ivory/80 leading-relaxed font-semibold">
+        That is normal.
+      </p>
+      <p class="mb-6 text-soft-ivory/80 leading-relaxed font-semibold">
+        But stability does not come from how much you earn.
+      </p>
+      <p class="mb-6 text-soft-ivory/80 leading-relaxed font-semibold">
+        Stability comes from how you manage what you earn.
+      </p>
+      <p class="mb-6 text-soft-ivory/80 leading-relaxed">
+        And before you spiral, good news: you do not need to become a finance bro. You just need systems.
+      </p>
+      <p class="mb-6 text-soft-ivory/80 leading-relaxed">
+        We love systems. Systems are sexy. Systems mean future you is not crying into her iced coffee come April.
+      </p>
+
+      <h2 class="text-3xl font-serif font-bold text-soft-ivory mb-4 mt-12">Taxes: Let's Rip The Band-Aid Off</h2>
+      <p class="mb-6 text-soft-ivory/80 leading-relaxed">
+        Okay. Taxes. I know. I know. But this is the biggest area where creators get blindsided.
+      </p>
+      <p class="mb-6 text-soft-ivory/80 leading-relaxed font-semibold">
+        Here is the simplest rule ever:
+      </p>
+      <p class="mb-6 text-soft-ivory/80 leading-relaxed font-semibold">
+        Pretend 25 to 35 percent of every payout does not exist.
+      </p>
+      <p class="mb-6 text-soft-ivory/80 leading-relaxed">
+        It is not your money. It is tax money. It belongs in what we will lovingly call The Do Not Touch Pile.
+      </p>
+      <p class="mb-6 text-soft-ivory/80 leading-relaxed font-semibold">
+        Best move you can make:
       </p>
       <ul class="mb-4 text-soft-ivory/80 leading-relaxed list-disc list-inside space-y-2">
-        <li>Equipment replacement</li>
-        <li>Slow seasons</li>
-        <li>Reinvesting into growth</li>
-        <li>Hiring support</li>
+        <li>Open a separate bank account</li>
+        <li>Every time you get paid, transfer that percentage in there</li>
+        <li>Never look at it again unless it is tax time</li>
       </ul>
       <p class="mb-6 text-soft-ivory/80 leading-relaxed">
-        This ensures your business keeps running, even when income dips.
+        Yes, sometimes it hurts. But trust me, it hurts way less than the "Oh no" moment when the IRS asks for its cut and you have… vibes and Postmates receipts.
       </p>
-
-      <h2 class="text-3xl font-serif font-bold text-soft-ivory mb-4 mt-12">Paying Yourself Like a Business Owner</h2>
-      <p class="mb-4 text-soft-ivory/80 leading-relaxed">
-        One of the healthiest shifts you can make is to pay yourself a set amount each month, even if your income fluctuates. For example:
-      </p>
-      <ol class="mb-4 text-soft-ivory/80 leading-relaxed list-decimal list-inside space-y-2">
-        <li>Business income comes in</li>
-        <li>Taxes are set aside</li>
-        <li>Operating expenses are budgeted</li>
-        <li>You transfer a fixed monthly paycheck to yourself</li>
-      </ol>
-      <p class="mb-4 text-soft-ivory/80 leading-relaxed">
-        This creates stability, helps with budgeting, and avoids lifestyle creep.
-      </p>
-      <p class="mb-6 text-soft-ivory/80 leading-relaxed font-semibold">
-        Your business should fund your life. But your life should not depend on every single DM sale.
-      </p>
-
-      <h2 class="text-3xl font-serif font-bold text-soft-ivory mb-4 mt-12">Planning for the Future</h2>
-      <p class="mb-4 text-soft-ivory/80 leading-relaxed">
-        Success as a creator is amazing. But long term safety means thinking beyond right now.
-      </p>
-      <p class="mb-4 text-soft-ivory/80 leading-relaxed">
-        Consider planning for:
+      <p class="mb-6 text-soft-ivory/80 leading-relaxed">
+        Also, track your expenses. Creators can legally deduct a lot of things like:
       </p>
       <ul class="mb-4 text-soft-ivory/80 leading-relaxed list-disc list-inside space-y-2">
-        <li>Retirement accounts</li>
-        <li>Health insurance</li>
-        <li>Life insurance</li>
-        <li>Disability coverage</li>
-        <li>Long term savings and investing</li>
-        <li>Multiple income streams</li>
+        <li>lighting</li>
+        <li>cameras</li>
+        <li>makeup</li>
+        <li>wardrobe used for work</li>
+        <li>editing software</li>
+        <li>agency or management fees</li>
+        <li>part of your workspace</li>
+        <li>your emotional support iced coffee (just kidding, but honestly, it should count)</li>
       </ul>
-      <p class="mb-6 text-soft-ivory/80 leading-relaxed font-semibold">
-        Financial safety is not about fear. It is about freedom.
+      <p class="mb-6 text-soft-ivory/80 leading-relaxed">
+        Do not guess. Keep receipts. Or at least bank statements. And really, if you can swing it, get a tax professional who understands creator income. Totally worth it.
       </p>
 
-      <h2 class="text-3xl font-serif font-bold text-soft-ivory mb-4 mt-12">Protecting Your Mental Health Through Money Clarity</h2>
-      <p class="mb-4 text-soft-ivory/80 leading-relaxed">
-        Money stress is one of the biggest contributors to burnout. Clear planning creates emotional peace.
+      <h2 class="text-3xl font-serif font-bold text-soft-ivory mb-4 mt-12">Savings: Your Financial Safety Blanket</h2>
+      <p class="mb-6 text-soft-ivory/80 leading-relaxed">
+        There are three main savings buckets I recommend.
       </p>
+      <p class="mb-6 text-soft-ivory/80 leading-relaxed">
+        Think of them like little safety nets that future you will want to kiss.
+      </p>
+
+      <h3 class="text-2xl font-serif font-bold text-soft-ivory mb-4 mt-8">1. The Emergency Fund</h3>
       <p class="mb-4 text-soft-ivory/80 leading-relaxed">
-        Creators who manage finances intentionally often report:
+        This is your "life happens" money for things like:
       </p>
       <ul class="mb-4 text-soft-ivory/80 leading-relaxed list-disc list-inside space-y-2">
-        <li>Less anxiety</li>
-        <li>More control</li>
-        <li>Better decision making</li>
-        <li>More confidence in negotiations</li>
-        <li>Increased long term stability</li>
+        <li>car dies</li>
+        <li>medical bill lands from the sky</li>
+        <li>platform glitches</li>
+        <li>slow month hits</li>
+        <li>brain says "I cannot work today"</li>
       </ul>
+      <p class="mb-4 text-soft-ivory/80 leading-relaxed">
+        Ideal goal is 3 to 6 months of living expenses saved. But if that feels like a fantasy number, start small.
+      </p>
+      <p class="mb-4 text-soft-ivory/80 leading-relaxed">
+        100 dollars<br>
+        Then 500<br>
+        Then 1,000<br>
+        Then keep building
+      </p>
       <p class="mb-6 text-soft-ivory/80 leading-relaxed font-semibold">
-        You deserve that level of security.
+        Consistency matters more than perfection.
       </p>
 
-      <h2 class="text-3xl font-serif font-bold text-soft-ivory mb-4 mt-12">Consider Working With Professionals</h2>
+      <h3 class="text-2xl font-serif font-bold text-soft-ivory mb-4 mt-8">2. The Tax Fund</h3>
+      <p class="mb-6 text-soft-ivory/80 leading-relaxed">
+        We already talked about this. You and I both know this one is important. Please do not tempt fate.
+      </p>
+
+      <h3 class="text-2xl font-serif font-bold text-soft-ivory mb-4 mt-8">3. The Business Fund</h3>
       <p class="mb-4 text-soft-ivory/80 leading-relaxed">
-        If you are earning consistently, it may be worth building a small support team, such as:
+        This is the money that lets your business grow and keeps it stable.
+      </p>
+      <p class="mb-4 text-soft-ivory/80 leading-relaxed">
+        Use it for things like:
       </p>
       <ul class="mb-4 text-soft-ivory/80 leading-relaxed list-disc list-inside space-y-2">
-        <li>A tax professional</li>
-        <li>A financial planner</li>
-        <li>A bookkeeper</li>
-        <li>A trusted agency or manager</li>
+        <li>new equipment</li>
+        <li>courses</li>
+        <li>hiring help</li>
+        <li>traveling for content</li>
+        <li>rebranding</li>
+        <li>paying for tools</li>
+        <li>months where things dip</li>
       </ul>
-      <p class="mb-4 text-soft-ivory/80 leading-relaxed">
-        Choose people who understand creator income and respect your boundaries and privacy.
-      </p>
-      <p class="mb-6 text-soft-ivory/80 leading-relaxed font-semibold">
-        Good advice often pays for itself.
+      <p class="mb-6 text-soft-ivory/80 leading-relaxed">
+        This prevents you from having to choose between paying rent and replacing a broken camera. And that is the vibe. Stability. Soft, peaceful, cozy stability.
       </p>
 
-      <h2 class="text-3xl font-serif font-bold text-soft-ivory mb-4 mt-12">You Are Running a Real Business</h2>
-      <p class="mb-4 text-soft-ivory/80 leading-relaxed">
-        Your work has value. Your time has value. Your financial wellbeing matters.
+      <h2 class="text-3xl font-serif font-bold text-soft-ivory mb-4 mt-12">Paying Yourself Like The CEO That You Are</h2>
+      <p class="mb-6 text-soft-ivory/80 leading-relaxed">
+        One of the best things creators can do is treat their money like a real business.
+      </p>
+      <p class="mb-6 text-soft-ivory/80 leading-relaxed">
+        Here's how:
       </p>
       <p class="mb-4 text-soft-ivory/80 leading-relaxed">
-        Treating your creator career like a legitimate business does not reduce your authenticity. It protects your future.
+        Your income arrives.<br>
+        You set aside taxes.<br>
+        You set aside business expenses.<br>
+        Then you pay yourself a set monthly paycheck.
+      </p>
+      <p class="mb-6 text-soft-ivory/80 leading-relaxed">
+        Yes. A paycheck. Like a real grown adult with a 401k and a lunchbox. Except your lunchbox probably has iced coffee and snacks and trauma inside.
+      </p>
+      <p class="mb-6 text-soft-ivory/80 leading-relaxed">
+        This creates predictable income. Predictability equals less anxiety. Less anxiety equals better mental health. Better mental health equals better content.
       </p>
       <p class="mb-6 text-soft-ivory/80 leading-relaxed font-semibold">
-        And you deserve that.
+        Do you see how this all links together like a wise little circle of peace?
+      </p>
+
+      <h2 class="text-3xl font-serif font-bold text-soft-ivory mb-4 mt-12">Thinking About Future You</h2>
+      <p class="mb-6 text-soft-ivory/80 leading-relaxed">
+        I know "retirement" sounds like a problem for old people who own property and argue about lawn care. But future you deserves comfort.
+      </p>
+      <p class="mb-4 text-soft-ivory/80 leading-relaxed">
+        If you can, start:
+      </p>
+      <ul class="mb-4 text-soft-ivory/80 leading-relaxed list-disc list-inside space-y-2">
+        <li>a retirement account</li>
+        <li>long term savings</li>
+        <li>actual health insurance</li>
+        <li>maybe even investments</li>
+      </ul>
+      <p class="mb-6 text-soft-ivory/80 leading-relaxed">
+        Not because you need to be rich. But because you deserve safety.
+      </p>
+      <p class="mb-6 text-soft-ivory/80 leading-relaxed font-semibold">
+        Future you is texting you from 20 years ahead saying "Thank you, queen."
+      </p>
+
+      <h2 class="text-3xl font-serif font-bold text-soft-ivory mb-4 mt-12">Money + Mental Health Are Best Friends</h2>
+      <p class="mb-6 text-soft-ivory/80 leading-relaxed">
+        Financial chaos equals stress. Stress equals burnout. Burnout equals nothing feels fun anymore and you start questioning everything including your existence.
+      </p>
+      <p class="mb-6 text-soft-ivory/80 leading-relaxed font-semibold">
+        Money clarity, however, does this magical thing where your shoulders drop and your brain goes "Oh. We are okay."
+      </p>
+      <p class="mb-4 text-soft-ivory/80 leading-relaxed">
+        Creators who understand their finances tend to feel:
+      </p>
+      <ul class="mb-4 text-soft-ivory/80 leading-relaxed list-disc list-inside space-y-2">
+        <li>calmer</li>
+        <li>more confident</li>
+        <li>more empowered</li>
+        <li>more intentional</li>
+        <li>less reactive</li>
+      </ul>
+      <p class="mb-6 text-soft-ivory/80 leading-relaxed">
+        Money is not scary when it has structure. Money is just a tool. And you are allowed to learn to use it.
+      </p>
+
+      <h2 class="text-3xl font-serif font-bold text-soft-ivory mb-4 mt-12">Getting Professional Help Is Not A Sign Of Weakness</h2>
+      <p class="mb-6 text-soft-ivory/80 leading-relaxed">
+        If you are earning consistently, please consider building your little dream team:
+      </p>
+      <ul class="mb-4 text-soft-ivory/80 leading-relaxed list-disc list-inside space-y-2">
+        <li>a tax pro</li>
+        <li>a bookkeeper</li>
+        <li>a financial planner</li>
+        <li>a management team you trust</li>
+      </ul>
+      <p class="mb-6 text-soft-ivory/80 leading-relaxed">
+        This is not you giving up control. This is you protecting your life.
+      </p>
+      <p class="mb-6 text-soft-ivory/80 leading-relaxed font-semibold">
+        Because spoiler: you are running a real business. You deserve real support.
+      </p>
+
+      <h2 class="text-3xl font-serif font-bold text-soft-ivory mb-4 mt-12">And Just To Be Clear</h2>
+      <p class="mb-6 text-soft-ivory/80 leading-relaxed font-semibold">
+        You are not dumb if you have struggled with money.
+      </p>
+      <p class="mb-6 text-soft-ivory/80 leading-relaxed font-semibold">
+        You are not irresponsible for learning as you go.
+      </p>
+      <p class="mb-6 text-soft-ivory/80 leading-relaxed font-semibold">
+        You are not behind.
+      </p>
+      <p class="mb-6 text-soft-ivory/80 leading-relaxed">
+        You are simply a human navigating an industry that does not come with financial training wheels. And the fact that you are reading this tells me something important.
+      </p>
+      <p class="mb-6 text-soft-ivory/80 leading-relaxed font-semibold">
+        You care.
+      </p>
+      <p class="mb-6 text-soft-ivory/80 leading-relaxed font-semibold">
+        And that is the foundation of everything.
       </p>
 
       <h2 class="text-3xl font-serif font-bold text-soft-ivory mb-4 mt-12">Our Approach at Onyxspire</h2>
-      <p class="mb-4 text-soft-ivory/80 leading-relaxed">
-        We believe that financial stability is one of the pillars of sustainable creator success. Ethical, intelligent management means helping creators:
-      </p>
-      <ul class="mb-4 text-soft-ivory/80 leading-relaxed list-disc list-inside space-y-2">
-        <li>Plan</li>
-        <li>Organize</li>
-        <li>Build systems</li>
-        <li>Reduce stress</li>
-        <li>Create long term security</li>
-      </ul>
-      <p class="mb-4 text-soft-ivory/80 leading-relaxed">
-        If you want a management team that sees the whole picture, including your financial stability and mental wellbeing, we would love to talk.
+      <p class="mb-6 text-soft-ivory/80 leading-relaxed">
+        We believe financial stability is deeply linked to creator wellbeing. We do not just want you to make money. We want you to keep it. Grow it. Feel safe with it. And use it to build a life where you can actually breathe.
       </p>
       <p class="mb-6 text-soft-ivory/80 leading-relaxed">
-        Apply to work with Onyxspire.
+        If you want strategy, support, structure, and a team that cares about you as a whole person, not just your metrics, we would love to talk.
+      </p>
+      <p class="mb-6 text-soft-ivory/80 leading-relaxed">
+        Apply to work with Onyxspire or ask about OFM consulting.<br>
+        Let's build your business like the empire it deserves to be.
       </p>
 
       <div class="mt-12 p-6 bg-soft-ivory/10 rounded-lg border-l-4 border-bronze-gold">
         <p class="text-soft-ivory/90 leading-relaxed font-semibold">
-          Important Note: This article is for educational purposes only and is not financial, tax, or legal advice. Every creator's financial situation is unique. Please consult a qualified professional before making financial decisions.
+          Final Note So My Lawyer Soul Can Rest: This is not financial or tax advice. Every situation is unique. Please talk to a qualified professional before making major decisions. But also, please drink some water. And please open that tax savings account. I am rooting for you.
         </p>
       </div>
     `,
@@ -1000,7 +1127,7 @@ const blogPosts: Record<string, {
   'staying-motivated-when-sales-slow-down': {
     id: '6',
     title: 'Staying Motivated When Sales Slow Down',
-    excerpt: 'Every creator experiences slow seasons. Learn how to stay grounded, protect your mental health, and adjust your strategy when revenue dips.',
+    excerpt: 'Every creator experiences slow seasons. Learn how to stay grounded, protect your mental health, and adjust your strategy when revenue dips. From releasing yourself from shame to separating your worth from your earnings, this guide helps you navigate those quiet weeks without spiraling or questioning all your life choices.',
     date: 'November 18, 2025',
     slug: 'staying-motivated-when-sales-slow-down',
     category: 'Wellness',
@@ -1533,6 +1660,299 @@ const blogPosts: Record<string, {
       </p>
     `,
   },
+  'setting-yourself-up-for-success-2026': {
+    id: '7',
+    title: 'Setting Yourself Up For Success in 2026',
+    excerpt: 'A realistic guide for creators who are building empires… and occasionally forgetting where they put their phone.',
+    date: 'January 1, 2026',
+    slug: 'setting-yourself-up-for-success-2026',
+    category: 'Strategy',
+    content: `
+      <p class="mb-6 text-soft-ivory/80 leading-relaxed">
+        (A realistic guide for creators who are building empires… and occasionally forgetting where they put their phone)
+      </p>
+      <p class="mb-6 text-soft-ivory/80 leading-relaxed">
+        Let's talk about success in 2026.
+      </p>
+      <p class="mb-6 text-soft-ivory/80 leading-relaxed">
+        Not the glossy, "I wake up at 4 a.m. for cold plunges and journal about my destiny on a mountain" kind. The real kind. The kind that exists somewhere between ambition, messy real life, and the eternal mystery of where your motivation goes every third Wednesday.
+      </p>
+      <p class="mb-6 text-soft-ivory/80 leading-relaxed">
+        If you are a creator, you already know this life is equal parts thrilling, exhausting, magical, confusing, and occasionally chaotic. So instead of pretending success is about grind culture and superhuman discipline, let's approach 2026 like calm, grounded adults who also enjoy naps.
+      </p>
+      <p class="mb-6 text-soft-ivory/80 leading-relaxed font-semibold">
+        Here is your relatable, real world guide to setting yourself up for success this year.
+      </p>
+
+      <div class="my-8">
+        <img src="/blog/setting-yourself-up-for-success-2026/pexels-pixabay-259027.jpg" alt="Planning and success" class="w-full h-auto rounded-lg max-h-64 object-cover" />
+      </div>
+
+      <h2 class="text-3xl font-serif font-bold text-soft-ivory mb-4 mt-12">Step One: Define "success" like an actual human being</h2>
+      <p class="mb-4 text-soft-ivory/80 leading-relaxed font-semibold">
+        Success is not a universal template.
+      </p>
+      <p class="mb-4 text-soft-ivory/80 leading-relaxed">
+        For some creators, success means scaling. More revenue. More structure. More systems. For others, it means stability. Predictable income. More time off. More peace.
+      </p>
+      <p class="mb-6 text-soft-ivory/80 leading-relaxed">
+        And for a few, it means finally figuring out how taxes work.
+      </p>
+      <p class="mb-4 text-soft-ivory/80 leading-relaxed">
+        Before you chase success, ask yourself:
+      </p>
+      <ul class="mb-4 text-soft-ivory/80 leading-relaxed list-disc list-inside space-y-2">
+        <li>What do I actually want my life to look like</li>
+        <li>How much do I want to work</li>
+        <li>How do I want to feel while I am working</li>
+        <li>What level of growth feels exciting instead of terrifying</li>
+      </ul>
+      <p class="mb-6 text-soft-ivory/80 leading-relaxed">
+        You are allowed to want more. You are also allowed to want calmer. Both count.
+      </p>
+      <p class="mb-6 text-soft-ivory/80 leading-relaxed font-semibold">
+        If your definition of success comes from comparison, you will always feel behind. Start with you.
+      </p>
+
+      <h2 class="text-3xl font-serif font-bold text-soft-ivory mb-4 mt-12">Step Two: Build systems that make your future self want to hug you</h2>
+      <p class="mb-4 text-soft-ivory/80 leading-relaxed font-semibold">
+        Future you is tired of doing everything manually.
+      </p>
+      <p class="mb-4 text-soft-ivory/80 leading-relaxed">
+        Future you would love:
+      </p>
+      <ul class="mb-4 text-soft-ivory/80 leading-relaxed list-disc list-inside space-y-2">
+        <li>templates</li>
+        <li>schedules</li>
+        <li>pricing structures</li>
+        <li>content planning</li>
+        <li>message systems</li>
+        <li>organization that lives somewhere other than your brain</li>
+      </ul>
+      <p class="mb-6 text-soft-ivory/80 leading-relaxed font-semibold">
+        Systems are not boring. Systems are the reason you get your life back.
+      </p>
+      <p class="mb-4 text-soft-ivory/80 leading-relaxed">
+        Your job is emotional, creative, and energy intensive. The more structure you add around it, the more room you have to actually enjoy it.
+      </p>
+      <p class="mb-6 text-soft-ivory/80 leading-relaxed">
+        And yes, the first time you set systems up it may feel like assembling furniture with no instructions. But once they are in place, everything clicks.
+      </p>
+      <p class="mb-6 text-soft-ivory/80 leading-relaxed font-semibold">
+        Future you will be thrilled.
+      </p>
+
+      <div class="my-8">
+        <img src="/blog/setting-yourself-up-for-success-2026/pexels-walls-io-440716388-15635240.jpg" alt="Organization and systems" class="w-full h-auto rounded-lg max-h-64 object-cover" />
+      </div>
+
+      <h2 class="text-3xl font-serif font-bold text-soft-ivory mb-4 mt-12">Step Three: Make friends with your money instead of avoiding eye contact with it</h2>
+      <p class="mb-4 text-soft-ivory/80 leading-relaxed">
+        Financial avoidance feels good in the moment but stressful in the long run. This year, try this radical new approach.
+      </p>
+      <p class="mb-4 text-soft-ivory/80 leading-relaxed font-semibold">
+        Look at your numbers.
+      </p>
+      <p class="mb-4 text-soft-ivory/80 leading-relaxed">
+        Not with shame. With curiosity.
+      </p>
+      <p class="mb-4 text-soft-ivory/80 leading-relaxed">
+        Ask:
+      </p>
+      <ul class="mb-4 text-soft-ivory/80 leading-relaxed list-disc list-inside space-y-2">
+        <li>What is coming in</li>
+        <li>What is going out</li>
+        <li>What months are slower</li>
+        <li>Where am I overspending</li>
+        <li>Where can I add stability</li>
+        <li>How much buffer would make me feel safe</li>
+      </ul>
+      <p class="mb-6 text-soft-ivory/80 leading-relaxed font-semibold">
+        Pay yourself like a business owner, not a rollercoaster passenger. Set aside money for taxes. Build a small emergency fund. Try not to base your self worth on your best or worst month.
+      </p>
+      <p class="mb-6 text-soft-ivory/80 leading-relaxed">
+        Money feels less scary when you treat it like data, not judgment.
+      </p>
+
+      <h2 class="text-3xl font-serif font-bold text-soft-ivory mb-4 mt-12">Step Four: Protect your nervous system like it is the CEO of your business</h2>
+      <p class="mb-6 text-soft-ivory/80 leading-relaxed font-semibold">
+        Because it is.
+      </p>
+      <p class="mb-4 text-soft-ivory/80 leading-relaxed">
+        Creators who burn out do not burn out because they lack grit. They burn out because they absorb too much emotional and sensory overload without breaks.
+      </p>
+      <p class="mb-4 text-soft-ivory/80 leading-relaxed">
+        Success in 2026 means:
+      </p>
+      <ul class="mb-4 text-soft-ivory/80 leading-relaxed list-disc list-inside space-y-2">
+        <li>working reasonable hours</li>
+        <li>knowing when to log off</li>
+        <li>eating food with vitamins</li>
+        <li>drinking water at least occasionally</li>
+        <li>refusing to tolerate emotional chaos from fans or coworkers</li>
+        <li>letting your brain be offline sometimes</li>
+      </ul>
+      <p class="mb-6 text-soft-ivory/80 leading-relaxed font-semibold">
+        Calm is a growth strategy. Rest is productivity. And if guilt pops up when you rest, gently tell it that grown adults are allowed to lie down sometimes.
+      </p>
+
+      <h2 class="text-3xl font-serif font-bold text-soft-ivory mb-4 mt-12">Step Five: Build real boundaries instead of imaginary ones</h2>
+      <p class="mb-6 text-soft-ivory/80 leading-relaxed font-semibold">
+        You do not need to be everyone's everything.
+      </p>
+      <p class="mb-4 text-soft-ivory/80 leading-relaxed">
+        Let 2026 be the year you finally say:
+      </p>
+      <ul class="mb-4 text-soft-ivory/80 leading-relaxed list-disc list-inside space-y-2">
+        <li>No, I do not answer messages at 3 a.m.</li>
+        <li>No, I do not cross that boundary.</li>
+        <li>No, you do not get to guilt me.</li>
+        <li>Yes, I am allowed to have a personal life.</li>
+      </ul>
+      <p class="mb-6 text-soft-ivory/80 leading-relaxed">
+        Good boundaries do not push fans away. They create respect. And they protect your long term ability to stay in this industry without losing yourself.
+      </p>
+      <p class="mb-6 text-soft-ivory/80 leading-relaxed font-semibold">
+        Boundaries are not walls. They are doorways with security systems.
+      </p>
+
+      <h2 class="text-3xl font-serif font-bold text-soft-ivory mb-4 mt-12">Step Six: Upgrade your brand instead of guessing</h2>
+      <p class="mb-6 text-soft-ivory/80 leading-relaxed font-semibold">
+        Your brand is not just your content. It is the experience of you.
+      </p>
+      <p class="mb-4 text-soft-ivory/80 leading-relaxed">
+        Ask yourself:
+      </p>
+      <ul class="mb-4 text-soft-ivory/80 leading-relaxed list-disc list-inside space-y-2">
+        <li>What energy do I bring</li>
+        <li>What do fans consistently come to me for</li>
+        <li>What makes me different</li>
+        <li>Is my page aligned with that</li>
+        <li>Does my bio sound like me or a robot trying its best</li>
+      </ul>
+      <p class="mb-6 text-soft-ivory/80 leading-relaxed font-semibold">
+        Clarity makes everything easier.
+      </p>
+      <p class="mb-4 text-soft-ivory/80 leading-relaxed">
+        When you know your identity, you attract fans who actually resonate with you. You stop chasing random tactics and start making intentional decisions.
+      </p>
+      <p class="mb-6 text-soft-ivory/80 leading-relaxed font-semibold">
+        That is when growth stops feeling chaotic and starts feeling like direction.
+      </p>
+
+      <h2 class="text-3xl font-serif font-bold text-soft-ivory mb-4 mt-12">Step Seven: Stop trying to do everything alone</h2>
+      <p class="mb-6 text-soft-ivory/80 leading-relaxed font-semibold">
+        There is a difference between being independent and being isolated.
+      </p>
+      <p class="mb-4 text-soft-ivory/80 leading-relaxed">
+        Support is not weakness. It is structure.
+      </p>
+      <p class="mb-4 text-soft-ivory/80 leading-relaxed">
+        That support might look like:
+      </p>
+      <ul class="mb-4 text-soft-ivory/80 leading-relaxed list-disc list-inside space-y-2">
+        <li>a consultant</li>
+        <li>a manager</li>
+        <li>a VA</li>
+        <li>a business mentor</li>
+        <li>a creator friend group</li>
+        <li>a therapist</li>
+        <li>a partner who reminds you to eat actual meals</li>
+      </ul>
+      <p class="mb-6 text-soft-ivory/80 leading-relaxed">
+        When you give yourself permission to receive help, you gain time, energy, perspective, and relief.
+      </p>
+      <p class="mb-6 text-soft-ivory/80 leading-relaxed font-semibold">
+        And relief is incredibly underrated.
+      </p>
+
+      <h2 class="text-3xl font-serif font-bold text-soft-ivory mb-4 mt-12">Step Eight: Create goals that respect your humanity</h2>
+      <p class="mb-4 text-soft-ivory/80 leading-relaxed">
+        Instead of setting goals like:
+      </p>
+      <p class="mb-4 text-soft-ivory/80 leading-relaxed italic">
+        "I will hustle nonstop and become everything by March."
+      </p>
+      <p class="mb-4 text-soft-ivory/80 leading-relaxed">
+        Try:
+      </p>
+      <ul class="mb-4 text-soft-ivory/80 leading-relaxed list-disc list-inside space-y-2">
+        <li>"I will build systems that make my business calmer."</li>
+        <li>"I will increase revenue without sacrificing my mental health."</li>
+        <li>"I will improve retention before chasing new traffic."</li>
+        <li>"I will balance work and actual life."</li>
+      </ul>
+      <p class="mb-6 text-soft-ivory/80 leading-relaxed">
+        Goals that include your wellbeing are easier to stick with long term. Because they do not require self abandonment to achieve them.
+      </p>
+      <p class="mb-6 text-soft-ivory/80 leading-relaxed font-semibold">
+        We like to win. But we also like to live.
+      </p>
+
+      <h2 class="text-3xl font-serif font-bold text-soft-ivory mb-4 mt-12">Step Nine: Expect setbacks and do not take them personally</h2>
+      <p class="mb-4 text-soft-ivory/80 leading-relaxed">
+        Slow months will still happen. Life will still be life. Platforms will still platform.
+      </p>
+      <p class="mb-6 text-soft-ivory/80 leading-relaxed font-semibold">
+        Success is not the absence of problems.
+      </p>
+      <p class="mb-6 text-soft-ivory/80 leading-relaxed font-semibold">
+        Success is the ability to respond to them without spiraling.
+      </p>
+      <p class="mb-4 text-soft-ivory/80 leading-relaxed">
+        When things dip, ask:
+      </p>
+      <p class="mb-4 text-soft-ivory/80 leading-relaxed italic">
+        "What is this trying to show me?"
+      </p>
+      <p class="mb-4 text-soft-ivory/80 leading-relaxed">
+        Then adjust. Breathe. Rebalance. Keep going.
+      </p>
+      <p class="mb-6 text-soft-ivory/80 leading-relaxed font-semibold">
+        That is real maturity in business.
+      </p>
+
+      <h2 class="text-3xl font-serif font-bold text-soft-ivory mb-4 mt-12">Step Ten: Build a life you actually enjoy outside your page</h2>
+      <p class="mb-6 text-soft-ivory/80 leading-relaxed font-semibold">
+        Your page is not your identity.
+      </p>
+      <p class="mb-4 text-soft-ivory/80 leading-relaxed">
+        This year, make space for:
+      </p>
+      <ul class="mb-4 text-soft-ivory/80 leading-relaxed list-disc list-inside space-y-2">
+        <li>hobbies that do not involve monetization</li>
+        <li>rest you do not have to earn</li>
+        <li>relationships where you are not performing</li>
+        <li>joy that belongs only to you</li>
+      </ul>
+      <p class="mb-6 text-soft-ivory/80 leading-relaxed">
+        The healthier and happier you are off the platform, the more grounded and inspired you will feel on it.
+      </p>
+      <p class="mb-6 text-soft-ivory/80 leading-relaxed font-semibold">
+        And that energy is magnetic.
+      </p>
+
+      <h2 class="text-3xl font-serif font-bold text-soft-ivory mb-4 mt-12">Our quiet philosophy at Onyxspire</h2>
+      <p class="mb-4 text-soft-ivory/80 leading-relaxed">
+        At Onyxspire, we believe success is not about pushing creators harder. It is about helping them build structure, stability, emotional safety, financial clarity, and brands that feel real.
+      </p>
+      <p class="mb-4 text-soft-ivory/80 leading-relaxed">
+        We care about the human at the center of the business. We care about the nervous system. We care about sustainability. And we care about growth that does not swallow your life whole.
+      </p>
+      <p class="mb-6 text-soft-ivory/80 leading-relaxed">
+        If 2026 is the year you want your business to feel calmer, smarter, and more aligned, we would love to support you.
+      </p>
+      <p class="mb-6 text-soft-ivory/80 leading-relaxed">
+        Apply to work with Onyxspire or ask about OFM consulting. Let's build something meaningful, not chaotic.
+      </p>
+
+      <div class="mt-12 p-6 bg-soft-ivory/10 rounded-lg border-l-4 border-bronze-gold">
+        <p class="text-soft-ivory/90 leading-relaxed font-semibold">
+          A gentle note: This is general business and mindset guidance, not legal, financial, or mental health advice. Your journey is unique. But you deserve support, stability, and success that does not burn you out.
+        </p>
+      </div>
+    `,
+  },
 }
 
 export default function BlogPost({ params }: { params: { slug: string } }) {
@@ -1605,6 +2025,12 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
           <div 
             className="absolute inset-0 bg-cover bg-center bg-no-repeat"
             style={{ backgroundImage: 'url(/blog/staying-motivated-when-sales-slow-down/hero.jpg)' }}
+          />
+        )}
+        {params.slug === 'setting-yourself-up-for-success-2026' && (
+          <div 
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+            style={{ backgroundImage: 'url(/blog/setting-yourself-up-for-success-2026/hero.jpg)' }}
           />
         )}
         {/* Gradient Overlay */}

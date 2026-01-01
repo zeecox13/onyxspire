@@ -6,17 +6,25 @@ import Image from 'next/image'
 
 const blogPosts = [
   {
+    id: '7',
+    title: 'Setting Yourself Up For Success in 2026',
+    excerpt: 'A realistic guide for creators who are building empires… and occasionally forgetting where they put their phone.',
+    date: 'January 1, 2026',
+    category: 'Strategy',
+    slug: 'setting-yourself-up-for-success-2026',
+  },
+  {
     id: '6',
     title: 'Staying Motivated When Sales Slow Down',
-    excerpt: 'Every creator experiences slow seasons. Learn how to stay grounded, protect your mental health, and adjust your strategy when revenue dips.',
+    excerpt: 'Every creator experiences slow seasons. Learn how to stay grounded, protect your mental health, and adjust your strategy when revenue dips. From releasing yourself from shame to separating your worth from your earnings, this guide helps you navigate those quiet weeks without spiraling or questioning all your life choices.',
     date: 'November 18, 2025',
     category: 'Wellness',
     slug: 'staying-motivated-when-sales-slow-down',
   },
   {
     id: '1',
-    title: 'Mental Health in the Adult Creator Industry: Let\'s Talk About It',
-    excerpt: 'An honest conversation about the emotional reality of being an adult creator, with practical strategies for protecting your wellbeing.',
+    title: 'Creator Burnout',
+    excerpt: 'An honest, warm conversation about the mental health side of being an adult creator. Because it\'s not just you. This job is a lot. From emotional whiplash and burnout that doesn\'t always look like exhaustion, to parasocial relationships and isolation even when you have fans, we explore how to take care of your mental health with intention, not perfection.',
     date: 'November 15, 2025',
     category: 'Wellness',
     slug: 'mental-health-adult-creator-industry',
@@ -32,7 +40,7 @@ const blogPosts = [
   {
     id: '3',
     title: 'Financial Planning for Creators: Taxes, Savings and Stability',
-    excerpt: 'A comprehensive guide to money management for adult creators, covering taxes, savings, and building financial stability for a sustainable career.',
+    excerpt: 'A comprehensive guide to money management for adult creators, covering taxes, savings, and building financial stability for a sustainable career. Learn how to set aside taxes properly, build emergency funds, pay yourself like a CEO, and create systems that give you peace of mind instead of panic. No finance bro jargon, just real talk from someone who gets it.',
     date: 'November 5, 2025',
     category: 'Finance',
     slug: 'financial-planning-for-creators',

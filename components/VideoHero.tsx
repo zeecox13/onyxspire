@@ -3,7 +3,6 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Image from 'next/image'
-import { useVideo } from '@/contexts/VideoContext'
 
 // Luxury video montage - rotating background videos
 const videoSources = [
@@ -16,24 +15,12 @@ const videoSources = [
   '/videos/5608053-uhd_3840_2160_30fps.mp4',
 ].map(src => encodeURI(src))
 
-// Videos that require white nav bar (update based on video content)
-const darkVideos = []
-
 // Fallback gradient background if videos don't load
 const fallbackGradient = 'linear-gradient(135deg, #121212 0%, #1E1F24 50%, #121212 100%)'
 
 export default function VideoHero() {
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0)
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([])
-  const { setIsDarkVideo } = useVideo()
-
-  // Check if current video is a dark video
-  useEffect(() => {
-    const currentVideoSrc = decodeURIComponent(videoSources[currentVideoIndex])
-    const videoName = currentVideoSrc.toLowerCase()
-    const isDark = darkVideos.some(darkVideo => videoName.includes(darkVideo.toLowerCase()))
-    setIsDarkVideo(isDark)
-  }, [currentVideoIndex, setIsDarkVideo])
 
   // Initial setup - load first video and start rotation
   useEffect(() => {

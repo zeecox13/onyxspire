@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import Navigation from '@/components/Navigation'
-import { VideoProvider } from '@/contexts/VideoContext'
 import dynamic from 'next/dynamic'
 
 // Lazy load Footer - not critical for initial render
@@ -26,13 +25,11 @@ export default function RootLayout({
         <link rel="preload" href="/videos/3015497-hd_1920_1080_24fps.mp4" as="video" type="video/mp4" />
       </head>
       <body>
-        <VideoProvider>
-          <Navigation />
-          <main className="min-h-screen relative z-10">
-            {children}
-          </main>
-          <Footer />
-        </VideoProvider>
+        <Navigation />
+        <main className="min-h-screen relative z-10">
+          {children}
+        </main>
+        <Footer />
       </body>
     </html>
   )

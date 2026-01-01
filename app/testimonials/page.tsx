@@ -121,7 +121,7 @@ export default function Testimonials() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-16 bg-transparent relative w-full">
+      <section className="py-16 bg-transparent relative w-full overflow-visible">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {testimonials.map((testimonial, index) => (
@@ -192,13 +192,13 @@ export default function Testimonials() {
         </div>
         
         {/* Photo on right edge - extends to screen edge with no gap */}
-        <div className="hidden lg:block absolute top-0 h-full pointer-events-none" style={{ right: '20%', width: '33vw' }}>
+        <div className="hidden lg:block absolute pointer-events-none overflow-visible" style={{ right: 0, width: '33vw', top: '-400px', height: 'calc(100% + 400px)' }}>
           <Image
             src="/photos/sjoy.png"
             alt=""
             width={800}
             height={1200}
-            className="h-full w-full object-cover object-left"
+            className="h-full w-full object-contain object-left"
             unoptimized
             style={{ display: 'block' }}
           />

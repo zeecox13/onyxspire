@@ -5,6 +5,35 @@ import { motion, AnimatePresence } from 'framer-motion'
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
 import dynamic from 'next/dynamic'
+import Link from 'next/link'
+
+// Blog posts data (first 3 most recent)
+const recentBlogPosts = [
+  {
+    id: '7',
+    title: 'Setting Yourself Up For Success in 2026',
+    excerpt: 'A realistic guide for creators who are building empires and occasionally forgetting where they put their phone. Not the glossy, "wake up at 4 a.m. for cold plunges" kind. The real kind. Learn how to define success like an actual human being, build systems that make your future self want to hug you, and create goals that include your wellbeing. Because success is not about grind culture and superhuman discipline—it\'s about calm, grounded progress.',
+    date: 'January 1, 2026',
+    category: 'Strategy',
+    slug: 'setting-yourself-up-for-success-2026',
+  },
+  {
+    id: '3',
+    title: 'Financial Planning for Creators: Taxes, Savings and Stability',
+    excerpt: 'A comprehensive guide to money management for adult creators, covering taxes, savings, and building financial stability for a sustainable career. Learn how to set aside taxes properly, build emergency funds, pay yourself like a CEO, and create systems that give you peace of mind instead of panic. No finance bro jargon, just real talk from someone who gets it.',
+    date: 'November 5, 2025',
+    category: 'Finance',
+    slug: 'financial-planning-for-creators',
+  },
+  {
+    id: '1',
+    title: 'Creator Burnout',
+    excerpt: 'An honest, warm conversation about the mental health side of being an adult creator. Because it\'s not just you. This job is a lot. From emotional whiplash and burnout that doesn\'t always look like exhaustion, to parasocial relationships and isolation even when you have fans, we explore how to take care of your mental health with intention, not perfection.',
+    date: 'November 15, 2025',
+    category: 'Wellness',
+    slug: 'mental-health-adult-creator-industry',
+  },
+]
 
 // Lazy load BrandRotator - load after hero videos
 const BrandRotator = dynamic(() => import('@/components/BrandRotator'), {
@@ -501,6 +530,85 @@ export default function Home() {
             >
               Start Your Application
             </a>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Blog Section - Newspaper Style */}
+      <section className="py-16 bg-white/95 relative">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          {/* Newspaper Header */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-8 pb-4 border-b-4 border-black-espresso"
+          >
+            <h2 className="text-5xl md:text-6xl font-bold text-black-espresso mb-2" style={{ fontFamily: "'Catchy Mager', 'Cormorant Garamond', 'Playfair Display', serif", letterSpacing: '0.05em' }}>
+              ONYX INK
+            </h2>
+            <p className="text-sm text-black-espresso/70 font-serif italic" style={{ letterSpacing: '0.1em' }}>
+              Latest Insights & Strategies
+            </p>
+          </motion.div>
+
+          {/* Newspaper Articles Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+            {recentBlogPosts.map((post, index) => (
+              <motion.article
+                key={post.id}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="border-b-2 border-black-espresso/20 pb-6 hover:border-black-espresso/40 transition-colors flex flex-col h-full"
+              >
+                <Link href={`/blog/${post.slug}`} className="block group flex flex-col h-full">
+                  {/* Article Header */}
+                  <div className="mb-3">
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="text-xs font-bold text-black-espresso uppercase tracking-widest font-serif" style={{ letterSpacing: '0.15em' }}>
+                        {post.category}
+                      </span>
+                      <span className="text-xs text-black-espresso/60 font-serif italic">
+                        {post.date}
+                      </span>
+                    </div>
+                    <h3 className="text-xl md:text-2xl font-bold text-black-espresso leading-tight mb-3 group-hover:text-accent-pink transition-colors" style={{ fontFamily: "'Catchy Mager', 'Cormorant Garamond', 'Playfair Display', serif", lineHeight: '1.2' }}>
+                      {post.title}
+                    </h3>
+                  </div>
+                  
+                  {/* Article Excerpt */}
+                  <p className="text-sm text-black-espresso/80 leading-relaxed font-serif mb-4 flex-grow" style={{ lineHeight: '1.7' }}>
+                    {post.excerpt}
+                  </p>
+                  
+                  {/* Read More */}
+                  <div className="text-xs font-bold text-black-espresso uppercase tracking-wider font-serif group-hover:text-accent-pink transition-colors mt-auto" style={{ letterSpacing: '0.1em' }}>
+                    READ MORE →
+                  </div>
+                </Link>
+              </motion.article>
+            ))}
+          </div>
+
+          {/* View All Link */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="text-center mt-12 pt-6 border-t-2 border-black-espresso/20"
+          >
+            <Link
+              href="/blog"
+              className="inline-block text-black-espresso font-bold uppercase tracking-widest hover:text-accent-pink transition-colors font-serif text-sm"
+              style={{ letterSpacing: '0.15em' }}
+            >
+              View All Articles →
+            </Link>
           </motion.div>
         </div>
       </section>

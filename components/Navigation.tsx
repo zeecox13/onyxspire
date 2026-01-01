@@ -4,7 +4,6 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { useVideo } from '@/contexts/VideoContext'
 import { usePathname } from 'next/navigation'
 
 export default function Navigation() {
@@ -14,7 +13,6 @@ export default function Navigation() {
   const [isPastHero, setIsPastHero] = useState(false)
   const [scrollProgress, setScrollProgress] = useState(0) // 0 to 1, where 0 is top of hero, 1 is past hero
   const pathname = usePathname()
-  const { isDarkVideo } = useVideo()
   const isHomePage = pathname === '/'
   
   // Check if this is a creator page (single segment path that's not a known route)
