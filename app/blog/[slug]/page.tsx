@@ -1084,7 +1084,7 @@ const blogPosts: Record<string, {
       </p>
 
       <div class="my-8">
-        <img src="/blog/staying-motivated-when-sales-slow-down/pexels-karola-g-5852309.jpg" alt="Focus and control" class="w-full h-auto rounded-lg max-h-64 object-cover" />
+        <img src="/blog/staying-motivated-when-sales-slow-down/pexels-karola-g-5852309.jpg" alt="Focus and control" class="w-full h-auto rounded-lg max-h-64 object-cover" style="object-position: center 55%;" />
       </div>
 
       <h2 class="text-3xl font-serif font-bold text-soft-ivory mb-4 mt-12">Focus on What You Can Control</h2>
@@ -1130,7 +1130,7 @@ const blogPosts: Record<string, {
       </p>
 
       <div class="my-8">
-        <img src="/blog/staying-motivated-when-sales-slow-down/pexels-maitree-rimthong-444156-1602726.jpg" alt="Connection and relationships" class="w-full h-auto rounded-lg max-h-64 object-cover" />
+        <img src="/blog/staying-motivated-when-sales-slow-down/pexels-maitree-rimthong-444156-1602726.jpg" alt="Connection and relationships" class="w-full h-auto rounded-lg max-h-64 object-cover" style="object-position: center 45%;" />
       </div>
 
       <h2 class="text-3xl font-serif font-bold text-soft-ivory mb-4 mt-12">Protect Your Energy and Avoid Burnout Panic Mode</h2>
@@ -1609,6 +1609,12 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
           <div 
             className="absolute inset-0 bg-cover bg-center bg-no-repeat"
             style={{ backgroundImage: 'url(/blog/scaling-smart-when-to-hire-manager/hero.png)' }}
+          />
+        )}
+        {params.slug === 'staying-motivated-when-sales-slow-down' && (
+          <div 
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+            style={{ backgroundImage: 'url(/blog/staying-motivated-when-sales-slow-down/hero.jpg)' }}
           />
         )}
         {/* Gradient Overlay */}
