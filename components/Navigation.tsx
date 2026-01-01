@@ -86,24 +86,36 @@ export default function Navigation() {
       >
         {/* Background layer - only shows when scrolling past hero or on non-home pages */}
         {(isPastHero || !isHomePage || (isHomePage && scrollProgress > 0.15)) && (
-          <div
-            className="absolute inset-0 transition-opacity duration-500 ease-out"
-            style={{
-              backgroundColor: isHomePage && !isPastHero && scrollProgress > 0.15
-                ? `rgba(0, 0, 0, ${Math.max(0, 1 - (scrollProgress - 0.15) / 0.85)})` // Fade from black (1) to transparent (0) as scrolling
-                : 'transparent',
-              backgroundImage: 'url(/photos/background.png)',
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-              backgroundRepeat: 'no-repeat',
-              opacity: isPastHero || !isHomePage 
-                ? 1 
-                : (scrollProgress - 0.15) / 0.85, // Smooth fade in from 0.15 to 1.0
-              maskImage: 'linear-gradient(to bottom, black 0%, black calc(100% - 60px), transparent 100%)',
-              WebkitMaskImage: 'linear-gradient(to bottom, black 0%, black calc(100% - 60px), transparent 100%)',
-              zIndex: -1,
-            }}
-          />
+          <>
+            {/* Solid background overlay for more visibility */}
+            <div
+              className="absolute inset-0 transition-opacity duration-500 ease-out"
+              style={{
+                backgroundColor: isPastHero || !isHomePage 
+                  ? 'rgba(255, 255, 255, 0.85)' 
+                  : isHomePage && scrollProgress > 0.15
+                    ? `rgba(255, 255, 255, ${0.85 * (scrollProgress - 0.15) / 0.85})`
+                    : 'transparent',
+                zIndex: -2,
+              }}
+            />
+            {/* Background image layer */}
+            <div
+              className="absolute inset-0 transition-opacity duration-500 ease-out"
+              style={{
+                backgroundImage: 'url(/photos/background.png)',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat',
+                opacity: isPastHero || !isHomePage 
+                  ? 1 
+                  : (scrollProgress - 0.15) / 0.85, // Smooth fade in from 0.15 to 1.0
+                maskImage: 'linear-gradient(to bottom, black 0%, black calc(100% - 60px), transparent 100%)',
+                WebkitMaskImage: 'linear-gradient(to bottom, black 0%, black calc(100% - 60px), transparent 100%)',
+                zIndex: -1,
+              }}
+            />
+          </>
         )}
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex items-center justify-between" style={{ height: 'clamp(3rem, 4vw, 3.5rem)' }}>
@@ -144,8 +156,8 @@ export default function Navigation() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`transition-colors duration-500 ease-in-out font-medium uppercase tracking-wider hover:text-accent-pink ${isPastHero || !isHomePage ? 'text-black-espresso' : 'text-white'}`}
-                style={{ fontSize: 'clamp(0.625rem, 0.75vw + 0.125rem, 0.875rem)', fontFamily: "'Catchy Mager', 'Cormorant Garamond', 'Playfair Display', serif" }}
+                className={`transition-colors duration-500 ease-in-out font-bold uppercase tracking-wider hover:text-accent-pink ${isPastHero || !isHomePage ? 'text-black-espresso' : 'text-white'}`}
+                style={{ fontSize: 'clamp(0.75rem, 0.85vw + 0.15rem, 1rem)', fontFamily: "'Catchy Mager', 'Cormorant Garamond', 'Playfair Display', serif" }}
               >
                 {link.href === '/application' ? 'Join Us' : link.label}
               </Link>
@@ -199,7 +211,7 @@ export default function Navigation() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`block transition-colors duration-300 font-medium text-sm uppercase tracking-wider hover:text-accent-pink ${isPastHero || !isHomePage ? 'text-black-espresso' : 'text-white'}`}
+                  className={`block transition-colors duration-300 font-bold text-sm uppercase tracking-wider hover:text-accent-pink ${isPastHero || !isHomePage ? 'text-black-espresso' : 'text-white'}`}
                   style={{ fontFamily: "'Catchy Mager', 'Cormorant Garamond', 'Playfair Display', serif" }}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >

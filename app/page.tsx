@@ -457,8 +457,8 @@ export default function Home() {
                 image: '/photos/alexia.png',
               },
               {
-                name: 'Sartia',
-                username: 'sartia',
+                name: 'Sarita',
+                username: 'sarita',
                 image: '/photos/sarita.png',
               },
               {

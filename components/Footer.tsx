@@ -19,7 +19,9 @@ export default function Footer() {
     pathname.split('/')[1] && // Segment exists
     !pathname.includes('.') // Not a file
 
-  if (isCreatorPage) {
+  const isApplicationPage = pathname === '/application'
+
+  if (isCreatorPage || isApplicationPage) {
     return null
   }
 

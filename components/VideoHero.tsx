@@ -21,6 +21,22 @@ const fallbackGradient = 'linear-gradient(135deg, #121212 0%, #1E1F24 50%, #1212
 export default function VideoHero() {
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0)
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([])
+  
+  // Generate stars only on client to avoid hydration mismatch
+  const [stars] = useState(() => 
+    typeof window !== 'undefined' 
+      ? Array.from({ length: 20 }).map((_, i) => ({
+          id: i,
+          size: Math.random() * 3 + 1,
+          startX: Math.random() * 100,
+          startY: Math.random() * 100,
+          duration: Math.random() * 20 + 15,
+          delay: Math.random() * 5,
+          animateX: Math.random() * 200 - 100,
+          animateY: Math.random() * 200 - 100,
+        }))
+      : []
+  )
 
   // Initial setup - load first video and start rotation
   useEffect(() => {
@@ -213,38 +229,30 @@ export default function VideoHero() {
 
       {/* Floating Stars */}
       <div className="absolute inset-0 z-5 overflow-hidden">
-        {Array.from({ length: 20 }).map((_, i) => {
-          const size = Math.random() * 3 + 1
-          const startX = Math.random() * 100
-          const startY = Math.random() * 100
-          const duration = Math.random() * 20 + 15
-          const delay = Math.random() * 5
-          
-          return (
-            <motion.div
-              key={i}
-              className="absolute rounded-full bg-soft-ivory/30"
-              style={{
-                width: `${size}px`,
-                height: `${size}px`,
-                left: `${startX}%`,
-                top: `${startY}%`,
-                boxShadow: `0 0 ${size * 2}px rgba(245, 239, 231, 0.5)`,
-              }}
-              animate={{
-                x: [0, Math.random() * 200 - 100],
-                y: [0, Math.random() * 200 - 100],
-                opacity: [0.2, 0.5, 0.2],
-              }}
-              transition={{
-                duration: duration,
-                repeat: Infinity,
-                delay: delay,
-                ease: 'easeInOut',
-              }}
-            />
-          )
-        })}
+        {stars.map((star) => (
+          <motion.div
+            key={star.id}
+            className="absolute rounded-full bg-soft-ivory/30"
+            style={{
+              width: `${star.size}px`,
+              height: `${star.size}px`,
+              left: `${star.startX}%`,
+              top: `${star.startY}%`,
+              boxShadow: `0 0 ${star.size * 2}px rgba(245, 239, 231, 0.5)`,
+            }}
+            animate={{
+              x: [0, star.animateX],
+              y: [0, star.animateY],
+              opacity: [0.2, 0.5, 0.2],
+            }}
+            transition={{
+              duration: star.duration,
+              repeat: Infinity,
+              delay: star.delay,
+              ease: 'easeInOut',
+            }}
+          />
+        ))}
       </div>
 
       <div className="relative z-50 h-full flex items-center justify-center">

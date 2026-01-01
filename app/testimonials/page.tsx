@@ -91,7 +91,7 @@ export default function Testimonials() {
   return (
     <div className="pt-20 relative" style={{ backgroundImage: 'url(/photos/background.png)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', backgroundAttachment: 'fixed' }}>
       {/* Photo on right edge - extends from top of screen */}
-      <div className="hidden lg:block absolute pointer-events-none overflow-visible" style={{ right: '-22%', width: '99vw', top: '-80px', zIndex: 0 }}>
+      <div className="hidden lg:block absolute pointer-events-none overflow-visible" style={{ right: '-32%', width: '85vw', top: '-80px', zIndex: 0 }}>
         <Image
           src="/photos/sjoy.png"
           alt=""
@@ -128,7 +128,7 @@ export default function Testimonials() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-xl md:text-2xl text-black-espresso/70 max-w-3xl mx-auto font-sans"
           >
-            Real success stories from creators who transformed their businesses with Onyxspire
+            Real success stories from creators who transformed their<br />businesses with Onyxspire
           </motion.p>
         </div>
       </section>
