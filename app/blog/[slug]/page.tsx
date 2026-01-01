@@ -2,7 +2,6 @@
 
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
-import { useState } from 'react'
 
 const blogPosts: Record<string, {
   id: string
@@ -611,7 +610,7 @@ const blogPosts: Record<string, {
   },
   'financial-planning-for-creators': {
     id: '3',
-    title: 'Financial Planning for Creators: Taxes, Savings and Stability',
+    title: 'Financial Planning for Creators',
     excerpt: 'A comprehensive guide to money management for adult creators, covering taxes, savings, and building financial stability for a sustainable career. Learn how to set aside taxes properly, build emergency funds, pay yourself like a CEO, and create systems that give you peace of mind instead of panic. No finance bro jargon, just real talk from someone who gets it.',
     date: 'November 5, 2025',
     slug: 'financial-planning-for-creators',
@@ -1132,12 +1131,6 @@ const blogPosts: Record<string, {
     slug: 'staying-motivated-when-sales-slow-down',
     category: 'Wellness',
     content: `
-      <p class="mb-6 text-soft-ivory/80 leading-relaxed">
-        Staying Motivated When Sales Slow Down
-      </p>
-      <p class="mb-6 text-soft-ivory/80 leading-relaxed">
-        (…and you start questioning all your life choices while staring at your phone)
-      </p>
       <p class="mb-6 text-soft-ivory/80 leading-relaxed">
         Let's be honest for a second.
       </p>
@@ -1669,9 +1662,6 @@ const blogPosts: Record<string, {
     category: 'Strategy',
     content: `
       <p class="mb-6 text-soft-ivory/80 leading-relaxed">
-        (A realistic guide for creators who are building empires… and occasionally forgetting where they put their phone)
-      </p>
-      <p class="mb-6 text-soft-ivory/80 leading-relaxed">
         Let's talk about success in 2026.
       </p>
       <p class="mb-6 text-soft-ivory/80 leading-relaxed">
@@ -1683,10 +1673,6 @@ const blogPosts: Record<string, {
       <p class="mb-6 text-soft-ivory/80 leading-relaxed font-semibold">
         Here is your relatable, real world guide to setting yourself up for success this year.
       </p>
-
-      <div class="my-8">
-        <img src="/blog/setting-yourself-up-for-success-2026/pexels-pixabay-259027.jpg" alt="Planning and success" class="w-full h-auto rounded-lg max-h-64 object-cover" />
-      </div>
 
       <h2 class="text-3xl font-serif font-bold text-soft-ivory mb-4 mt-12">Step One: Define "success" like an actual human being</h2>
       <p class="mb-4 text-soft-ivory/80 leading-relaxed font-semibold">
@@ -1713,6 +1699,10 @@ const blogPosts: Record<string, {
       <p class="mb-6 text-soft-ivory/80 leading-relaxed font-semibold">
         If your definition of success comes from comparison, you will always feel behind. Start with you.
       </p>
+
+      <div class="my-8">
+        <img src="/blog/setting-yourself-up-for-success-2026/pexels-pixabay-259027.jpg" alt="Planning and success" class="w-full h-auto rounded-lg max-h-64 object-cover" />
+      </div>
 
       <h2 class="text-3xl font-serif font-bold text-soft-ivory mb-4 mt-12">Step Two: Build systems that make your future self want to hug you</h2>
       <p class="mb-4 text-soft-ivory/80 leading-relaxed font-semibold">
@@ -1742,10 +1732,6 @@ const blogPosts: Record<string, {
         Future you will be thrilled.
       </p>
 
-      <div class="my-8">
-        <img src="/blog/setting-yourself-up-for-success-2026/pexels-walls-io-440716388-15635240.jpg" alt="Organization and systems" class="w-full h-auto rounded-lg max-h-64 object-cover" />
-      </div>
-
       <h2 class="text-3xl font-serif font-bold text-soft-ivory mb-4 mt-12">Step Three: Make friends with your money instead of avoiding eye contact with it</h2>
       <p class="mb-4 text-soft-ivory/80 leading-relaxed">
         Financial avoidance feels good in the moment but stressful in the long run. This year, try this radical new approach.
@@ -1773,6 +1759,10 @@ const blogPosts: Record<string, {
       <p class="mb-6 text-soft-ivory/80 leading-relaxed">
         Money feels less scary when you treat it like data, not judgment.
       </p>
+
+      <div class="my-8">
+        <img src="/blog/setting-yourself-up-for-success-2026/pexels-walls-io-440716388-15635240.jpg" alt="Organization and systems" class="w-full h-auto rounded-lg max-h-64 object-cover" style="object-position: center 45%;" />
+      </div>
 
       <h2 class="text-3xl font-serif font-bold text-soft-ivory mb-4 mt-12">Step Four: Protect your nervous system like it is the CEO of your business</h2>
       <p class="mb-6 text-soft-ivory/80 leading-relaxed font-semibold">
@@ -1815,6 +1805,10 @@ const blogPosts: Record<string, {
       <p class="mb-6 text-soft-ivory/80 leading-relaxed font-semibold">
         Boundaries are not walls. They are doorways with security systems.
       </p>
+
+      <div class="my-8">
+        <img src="/blog/setting-yourself-up-for-success-2026/pexels-inga-sv-3394266.jpg" alt="Success and growth" class="w-full h-auto rounded-lg max-h-64 object-cover" style="object-position: center 44%;" />
+      </div>
 
       <h2 class="text-3xl font-serif font-bold text-soft-ivory mb-4 mt-12">Step Six: Upgrade your brand instead of guessing</h2>
       <p class="mb-6 text-soft-ivory/80 leading-relaxed font-semibold">
@@ -1956,7 +1950,6 @@ const blogPosts: Record<string, {
 }
 
 export default function BlogPost({ params }: { params: { slug: string } }) {
-  const [isLightMode, setIsLightMode] = useState(false)
   const post = blogPosts[params.slug]
 
   if (!post) {
@@ -1969,27 +1962,63 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
     .map(([slug, post]) => ({ ...post, slug }))
     .slice(0, 3)
 
-  // Transform content classes based on mode
-  const transformContent = (content: string, lightMode: boolean) => {
-    if (lightMode) {
-      return content
-        .replace(/text-soft-ivory/g, 'text-black-espresso')
-        .replace(/bg-black-espresso/g, 'bg-white')
-        .replace(/bg-ash-graphite/g, 'bg-white')
-        .replace(/bg-gradient-to-b from-black-espresso to-ash-graphite/g, 'bg-white')
-        .replace(/text-bronze-gold/g, 'text-accent-pink')
-        .replace(/bg-soft-ivory\/10/g, 'bg-accent-pink/10')
-        .replace(/border-bronze-gold/g, 'border-accent-pink')
-    }
-    return content
+  // Transform content classes to light mode and add drop cap to first paragraph
+  const transformContent = (content: string) => {
+    let transformed = content
+    
+    // Add drop cap class to the first paragraph
+    transformed = transformed.replace(
+      /(<p class="mb-6 text-soft-ivory\/80 leading-relaxed">)/,
+      '<p class="mb-6 text-soft-ivory/80 leading-relaxed drop-cap">'
+    )
+    
+    const symbolClass = 'text-black-espresso/20'
+    
+    // Add subtle ✦ symbols after some h2 headings (every 2nd one)
+    let headingCount = 0
+    transformed = transformed.replace(
+      /(<h2 class="text-3xl font-serif font-bold text-soft-ivory mb-4 mt-12">[^<]+<\/h2>)/g,
+      (match) => {
+        headingCount++
+        if (headingCount % 2 === 0) {
+          return match + `<span class="${symbolClass} ml-2">✦</span>`
+        }
+        return match
+      }
+    )
+    
+    // Add symbol at the end of some paragraphs (approximately every 4th paragraph, starting from 3rd)
+    let paraCount = 0
+    transformed = transformed.replace(
+      /(<p class="[^"]*mb-[46][^"]*">[^<]*\.<\/p>)/g,
+      (match) => {
+        paraCount++
+        if (paraCount >= 3 && paraCount % 4 === 0) {
+          return match.replace(/\.<\/p>$/, ` <span class="${symbolClass}">✦</span>.</p>`)
+        }
+        return match
+      }
+    )
+    
+    // Always use light mode
+    transformed = transformed
+      .replace(/text-soft-ivory/g, 'text-black-espresso')
+      .replace(/bg-black-espresso/g, 'bg-white')
+      .replace(/bg-ash-graphite/g, 'bg-white')
+      .replace(/bg-gradient-to-b from-black-espresso to-ash-graphite/g, 'bg-white')
+      .replace(/text-bronze-gold/g, 'text-accent-pink')
+      .replace(/bg-soft-ivory\/10/g, 'bg-accent-pink/10')
+      .replace(/border-bronze-gold/g, 'border-accent-pink')
+    
+    return transformed
   }
 
-  const transformedContent = transformContent(post.content, isLightMode)
+  const transformedContent = transformContent(post.content)
 
   return (
     <div className="pt-20">
       {/* Hero Section */}
-      <section className={`py-24 relative ${isLightMode ? 'bg-white' : ''}`}>
+      <section className="py-24 relative bg-white">
         {/* Background Image */}
         {params.slug === 'mental-health-adult-creator-industry' && (
           <div 
@@ -2034,44 +2063,50 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
           />
         )}
         {/* Gradient Overlay */}
-        <div className={`absolute inset-0 ${isLightMode ? 'bg-white/60' : 'bg-gradient-to-b from-black-espresso/90 to-ash-graphite/90'}`} />
+        <div className="absolute inset-0 bg-white/60" />
         {/* Content */}
         <div className="relative max-w-4xl mx-auto px-6 lg:px-8 z-10">
-          <div className="flex items-center justify-between mb-8">
+          <div className="flex items-center justify-end mb-8">
             <Link 
               href="/blog"
               className="text-accent-pink hover:text-accent-pink/80 transition-colors text-sm uppercase tracking-wider inline-block"
             >
               ← Back to Blog
             </Link>
-            {/* Theme Toggle */}
-            <button
-              onClick={() => setIsLightMode(!isLightMode)}
-              className="px-4 py-2 rounded-lg border-2 border-accent-pink text-accent-pink hover:bg-accent-pink/10 transition-all"
-              aria-label="Toggle light/dark mode"
-            >
-              {isLightMode ? '🌙 Dark' : '☀️ Light'}
-            </button>
           </div>
           <div className="mb-6">
             <span className="text-accent-pink text-sm font-semibold uppercase tracking-wider">
               {post.category}
             </span>
-            <span className={`${isLightMode ? 'text-black-espresso/50' : 'text-soft-ivory/50'} text-sm ml-4`}>
+            <span className="text-black-espresso/50 text-sm ml-4">
               {post.date}
             </span>
           </div>
-          <h1 className={`text-4xl md:text-5xl lg:text-6xl font-serif font-bold mb-6 ${isLightMode ? 'text-black-espresso' : 'text-soft-ivory'}`}>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold mb-3 text-black-espresso">
             {post.title}
           </h1>
+          {params.slug === 'staying-motivated-when-sales-slow-down' && (
+            <p className="text-lg md:text-xl text-black-espresso/70 italic font-serif">
+              (…and you start questioning all your life choices while staring at your phone)
+            </p>
+          )}
+          {params.slug === 'setting-yourself-up-for-success-2026' && (
+            <p className="text-lg md:text-xl text-black-espresso/70 italic font-serif">
+              (A realistic guide for creators who are building empires… and occasionally forgetting where they put their phone)
+            </p>
+          )}
         </div>
       </section>
 
       {/* Content */}
-      <section className={`py-16 ${isLightMode ? 'bg-white' : 'bg-black-espresso'}`}>
+      <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-6 lg:px-8">
           <article 
-            className={`prose max-w-none ${isLightMode ? '' : 'prose-invert'}`}
+            className="prose max-w-none"
+            style={{ 
+              '--tw-prose-body': '#121212',
+              '--tw-prose-headings': '#121212',
+            } as React.CSSProperties}
             dangerouslySetInnerHTML={{ __html: transformedContent }}
           />
         </div>
@@ -2097,9 +2132,9 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
       </section>
 
       {/* Other Blog Posts Showcase */}
-      <section className={`py-24 ${isLightMode ? 'bg-white' : 'bg-ash-graphite'}`}>
+      <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <h2 className={`text-4xl md:text-5xl font-bold mb-12 text-center ${isLightMode ? 'text-black-espresso' : 'text-soft-ivory'}`} style={{ fontFamily: "'Catchy Mager', 'Cormorant Garamond', 'Playfair Display', serif" }}>
+          <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center text-black-espresso" style={{ fontFamily: "'Catchy Mager', 'Cormorant Garamond', 'Playfair Display', serif" }}>
             More Articles
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -2107,21 +2142,21 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
               <Link
                 key={otherPost.slug}
                 href={`/blog/${otherPost.slug}`}
-                className={`group bg-white rounded-[20px] overflow-hidden border-2 ${isLightMode ? 'border-accent-pink/35 hover:border-accent-pink/60' : 'border-accent-pink/35 hover:border-accent-pink/60'} shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2`}
+                className="group bg-white rounded-[20px] overflow-hidden border-2 border-accent-pink/35 hover:border-accent-pink/60 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
               >
                 <div className="p-6 h-full flex flex-col">
                   <div className="mb-4">
                     <span className={`text-accent-pink text-sm font-semibold uppercase tracking-wider font-sans`}>
                       {otherPost.category}
                     </span>
-                    <span className={`${isLightMode ? 'text-black-espresso/50' : 'text-black-espresso/50'} text-sm ml-4 font-sans`}>
+                    <span className="text-black-espresso/50 text-sm ml-4 font-sans">
                       {otherPost.date}
                     </span>
                   </div>
-                  <h3 className={`text-xl font-bold mb-4 group-hover:text-accent-pink transition-colors ${isLightMode ? 'text-black-espresso' : 'text-black-espresso'}`} style={{ fontFamily: "'Catchy Mager', 'Cormorant Garamond', 'Playfair Display', serif" }}>
+                  <h3 className="text-xl font-bold mb-4 group-hover:text-accent-pink transition-colors text-black-espresso" style={{ fontFamily: "'Catchy Mager', 'Cormorant Garamond', 'Playfair Display', serif" }}>
                     {otherPost.title}
                   </h3>
-                  <p className={`${isLightMode ? 'text-black-espresso/70' : 'text-black-espresso/70'} leading-relaxed mb-6 flex-grow font-sans text-sm`}>
+                  <p className="text-black-espresso/70 leading-relaxed mb-6 flex-grow font-sans text-sm">
                     {otherPost.excerpt}
                   </p>
                   <div className="text-accent-pink font-semibold text-sm uppercase tracking-wider group-hover:underline font-sans">

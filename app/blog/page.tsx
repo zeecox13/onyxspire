@@ -39,7 +39,7 @@ const blogPosts = [
   },
   {
     id: '3',
-    title: 'Financial Planning for Creators: Taxes, Savings and Stability',
+    title: 'Financial Planning for Creators',
     excerpt: 'A comprehensive guide to money management for adult creators, covering taxes, savings, and building financial stability for a sustainable career. Learn how to set aside taxes properly, build emergency funds, pay yourself like a CEO, and create systems that give you peace of mind instead of panic. No finance bro jargon, just real talk from someone who gets it.',
     date: 'November 5, 2025',
     category: 'Finance',
@@ -67,39 +67,34 @@ export default function BlogPage() {
   return (
     <div className="pt-20 relative" style={{ backgroundImage: 'url(/photos/background.png)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', backgroundAttachment: 'fixed' }}>
       {/* Hero Section */}
-      <section className="py-24 bg-transparent relative z-10">
+      <section className="py-8 bg-transparent relative z-10">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="mb-6"
           >
             <Image
               src="/photos/onyx ink.png"
               alt="Onyx Ink Blog"
-              width={800}
-              height={200}
+              width={600}
+              height={150}
               className="mx-auto h-auto w-full max-w-2xl"
               priority
               unoptimized
             />
           </motion.div>
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-xl md:text-2xl text-black-espresso/70 max-w-3xl mx-auto font-sans"
-          >
-            Insights, strategies, and tips for creators at the top of their game
-          </motion.p>
         </div>
       </section>
 
-      {/* Blog Posts */}
-      <section className="py-24 bg-transparent relative z-10">
+      {/* Bold Divider */}
+      <div className="border-b-4 border-black-espresso max-w-7xl mx-auto px-6 lg:px-8 mb-8"></div>
+
+      {/* Blog Posts - Newspaper Style */}
+      <section className="py-16 relative">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* Newspaper Articles Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
             {blogPosts.map((post, index) => (
               <motion.article
                 key={post.id}
@@ -107,27 +102,32 @@ export default function BlogPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-white rounded-[20px] overflow-hidden border-2 border-accent-pink/35 shadow-lg hover:border-accent-pink/60 transition-all group"
+                className="border-b-2 border-black-espresso/20 pb-6 hover:border-black-espresso/40 transition-colors flex flex-col h-full"
               >
-                <Link href={`/blog/${post.slug}`}>
-                  <div className="p-8 h-full flex flex-col">
-                    <div className="mb-4">
-                      <span className="text-accent-pink text-sm font-semibold uppercase tracking-wider font-sans">
+                <Link href={`/blog/${post.slug}`} className="block group flex flex-col h-full">
+                  {/* Article Header */}
+                  <div className="mb-3">
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="text-xs font-bold text-black-espresso uppercase tracking-widest font-serif" style={{ letterSpacing: '0.15em' }}>
                         {post.category}
                       </span>
-                      <span className="text-black-espresso/50 text-sm ml-4 font-sans">
+                      <span className="text-xs text-black-espresso/60 font-serif italic">
                         {post.date}
                       </span>
                     </div>
-                    <h2 className="text-2xl font-serif font-bold text-black-espresso mb-4 group-hover:text-accent-pink transition-colors">
+                    <h3 className="text-xl md:text-2xl font-bold text-black-espresso leading-tight mb-3 group-hover:text-accent-pink transition-colors" style={{ fontFamily: "'Catchy Mager', 'Cormorant Garamond', 'Playfair Display', serif", lineHeight: '1.2' }}>
                       {post.title}
-                    </h2>
-                    <p className="text-black-espresso/70 leading-relaxed mb-6 flex-grow font-sans">
-                      {post.excerpt}
-                    </p>
-                    <div className="text-accent-pink font-semibold text-sm uppercase tracking-wider group-hover:underline font-sans">
-                      Read More →
-                    </div>
+                    </h3>
+                  </div>
+                  
+                  {/* Article Excerpt */}
+                  <p className="text-sm text-black-espresso/80 leading-relaxed font-serif mb-4 flex-grow" style={{ lineHeight: '1.7' }}>
+                    {post.excerpt}
+                  </p>
+                  
+                  {/* Read More */}
+                  <div className="text-xs font-bold text-black-espresso uppercase tracking-wider font-serif group-hover:text-accent-pink transition-colors mt-auto" style={{ letterSpacing: '0.1em' }}>
+                    READ MORE →
                   </div>
                 </Link>
               </motion.article>

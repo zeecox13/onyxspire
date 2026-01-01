@@ -12,15 +12,15 @@ const recentBlogPosts = [
   {
     id: '7',
     title: 'Setting Yourself Up For Success in 2026',
-    excerpt: 'A realistic guide for creators who are building empires and occasionally forgetting where they put their phone. Not the glossy, "wake up at 4 a.m. for cold plunges" kind. The real kind. Learn how to define success like an actual human being, build systems that make your future self want to hug you, and create goals that include your wellbeing. Because success is not about grind culture and superhuman discipline—it\'s about calm, grounded progress.',
+    excerpt: 'A realistic guide for creators building empires and occasionally forgetting where they put their phone. Learn how to define success like an actual human being, build systems that make your future self want to hug you, and create goals that include your wellbeing. Because success is not about grind culture—it\'s about calm, grounded progress.',
     date: 'January 1, 2026',
     category: 'Strategy',
     slug: 'setting-yourself-up-for-success-2026',
   },
   {
     id: '3',
-    title: 'Financial Planning for Creators: Taxes, Savings and Stability',
-    excerpt: 'A comprehensive guide to money management for adult creators, covering taxes, savings, and building financial stability for a sustainable career. Learn how to set aside taxes properly, build emergency funds, pay yourself like a CEO, and create systems that give you peace of mind instead of panic. No finance bro jargon, just real talk from someone who gets it.',
+    title: 'Financial Planning for Creators',
+    excerpt: 'A comprehensive guide to money management for adult creators, covering taxes, savings, and building financial stability. Learn how to set aside taxes properly, build emergency funds, pay yourself like a CEO, and create systems that give you peace of mind instead of panic. No finance bro jargon, just real talk.',
     date: 'November 5, 2025',
     category: 'Finance',
     slug: 'financial-planning-for-creators',
@@ -535,7 +535,7 @@ export default function Home() {
       </section>
 
       {/* Blog Section - Newspaper Style */}
-      <section className="py-16 bg-white/95 relative">
+      <section className="py-8 relative">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           {/* Newspaper Header */}
           <motion.div
@@ -543,15 +543,25 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-8 pb-4 border-b-4 border-black-espresso"
+            className="text-center mb-8 pb-4"
           >
-            <h2 className="text-5xl md:text-6xl font-bold text-black-espresso mb-2" style={{ fontFamily: "'Catchy Mager', 'Cormorant Garamond', 'Playfair Display', serif", letterSpacing: '0.05em' }}>
-              ONYX INK
-            </h2>
+            <div className="mb-2">
+              <Image
+                src="/photos/onyx ink.png"
+                alt="Onyx Ink"
+                width={500}
+                height={125}
+                className="mx-auto h-auto w-full max-w-xl"
+                unoptimized
+              />
+            </div>
             <p className="text-sm text-black-espresso/70 font-serif italic" style={{ letterSpacing: '0.1em' }}>
-              Latest Insights & Strategies
+              Insights for the Modern Creator Economy
             </p>
           </motion.div>
+          
+          {/* Bold Divider */}
+          <div className="border-b-4 border-black-espresso mb-8"></div>
 
           {/* Newspaper Articles Grid */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
@@ -562,7 +572,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="border-b-2 border-black-espresso/20 pb-6 hover:border-black-espresso/40 transition-colors flex flex-col h-full"
+                className="pb-6 hover:border-black-espresso/40 transition-colors flex flex-col h-full"
               >
                 <Link href={`/blog/${post.slug}`} className="block group flex flex-col h-full">
                   {/* Article Header */}
@@ -575,6 +585,7 @@ export default function Home() {
                         {post.date}
                       </span>
                     </div>
+                    <div className="border-b border-black-espresso/20 mb-3"></div>
                     <h3 className="text-xl md:text-2xl font-bold text-black-espresso leading-tight mb-3 group-hover:text-accent-pink transition-colors" style={{ fontFamily: "'Catchy Mager', 'Cormorant Garamond', 'Playfair Display', serif", lineHeight: '1.2' }}>
                       {post.title}
                     </h3>
@@ -586,8 +597,10 @@ export default function Home() {
                   </p>
                   
                   {/* Read More */}
-                  <div className="text-xs font-bold text-black-espresso uppercase tracking-wider font-serif group-hover:text-accent-pink transition-colors mt-auto" style={{ letterSpacing: '0.1em' }}>
-                    READ MORE →
+                  <div className="border-t-2 border-black-espresso/20 pt-4 mt-auto">
+                    <div className="text-xs font-bold text-black-espresso uppercase tracking-wider font-serif group-hover:text-accent-pink transition-colors" style={{ letterSpacing: '0.1em' }}>
+                      READ MORE →
+                    </div>
                   </div>
                 </Link>
               </motion.article>

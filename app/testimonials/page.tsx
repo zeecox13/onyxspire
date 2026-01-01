@@ -89,9 +89,22 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <div className="pt-20" style={{ backgroundImage: 'url(/photos/background.png)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', backgroundAttachment: 'fixed' }}>
+    <div className="pt-20 relative" style={{ backgroundImage: 'url(/photos/background.png)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', backgroundAttachment: 'fixed' }}>
+      {/* Photo on right edge - extends from top of screen */}
+      <div className="hidden lg:block absolute pointer-events-none overflow-visible" style={{ right: '-22%', width: '99vw', top: '-80px', zIndex: 0 }}>
+        <Image
+          src="/photos/sjoy.png"
+          alt=""
+          width={800}
+          height={1200}
+          className="w-full object-contain object-left"
+          unoptimized
+          style={{ display: 'block', height: 'auto' }}
+        />
+      </div>
+
       {/* Hero Section */}
-      <section className="py-24 bg-transparent">
+      <section className="py-24 bg-transparent relative z-10">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -189,19 +202,6 @@ export default function Testimonials() {
               </motion.div>
             ))}
           </div>
-        </div>
-        
-        {/* Photo on right edge - extends to screen edge with no gap */}
-        <div className="hidden lg:block absolute pointer-events-none overflow-visible" style={{ right: 0, width: '33vw', top: '-400px', height: 'calc(100% + 400px)' }}>
-          <Image
-            src="/photos/sjoy.png"
-            alt=""
-            width={800}
-            height={1200}
-            className="h-full w-full object-contain object-left"
-            unoptimized
-            style={{ display: 'block' }}
-          />
         </div>
       </section>
 
