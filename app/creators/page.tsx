@@ -49,6 +49,7 @@ export default function Creators() {
               height={200}
               className="mx-auto h-auto w-full max-w-2xl"
               priority
+              fetchPriority="high"
               unoptimized
             />
           </motion.div>
@@ -122,6 +123,7 @@ export default function Creators() {
                       alt={creator.name}
                       fill
                       className="object-cover transition-transform duration-500 group-hover:scale-110"
+                      style={creator.username === 'sarita' ? { objectPosition: 'center 25%' } : undefined}
                       unoptimized
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />

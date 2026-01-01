@@ -2,6 +2,7 @@
 
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
+import Image from 'next/image'
 
 const blogPosts: Record<string, {
   id: string
@@ -2018,52 +2019,101 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
   return (
     <div className="pt-20">
       {/* Hero Section */}
-      <section className="py-24 relative bg-white">
+      <section className="py-24 relative bg-white overflow-hidden">
         {/* Background Image */}
         {params.slug === 'mental-health-adult-creator-industry' && (
-          <div 
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-            style={{ backgroundImage: 'url(/blog/mental-health-adult-creator-industry/hero.jpg)' }}
-          />
+          <div className="absolute inset-0">
+            <Image
+              src="/blog/mental-health-adult-creator-industry/hero.jpg"
+              alt=""
+              fill
+              className="object-cover"
+              priority
+              fetchPriority="high"
+              unoptimized
+            />
+          </div>
         )}
         {params.slug === 'what-creators-want-from-managers' && (
-          <div 
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-            style={{ backgroundImage: 'url(/blog/what-creators-want-from-managers/hero.jpg)' }}
-          />
+          <div className="absolute inset-0">
+            <Image
+              src="/blog/what-creators-want-from-managers/hero.jpg"
+              alt=""
+              fill
+              className="object-cover"
+              priority
+              fetchPriority="high"
+              unoptimized
+            />
+          </div>
         )}
         {params.slug === 'financial-planning-for-creators' && (
-          <div 
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-            style={{ backgroundImage: 'url(/blog/financial-planning-for-creators/hero.jpg)' }}
-          />
+          <div className="absolute inset-0">
+            <Image
+              src="/blog/financial-planning-for-creators/hero.jpg"
+              alt=""
+              fill
+              className="object-cover"
+              priority
+              fetchPriority="high"
+              unoptimized
+            />
+          </div>
         )}
         {params.slug === 'algorithm-myth-onlyfans-earnings' && (
-          <div 
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-            style={{ backgroundImage: 'url(/blog/algorithm-myth-onlyfans-earnings/hero.jpg)' }}
-          />
+          <div className="absolute inset-0">
+            <Image
+              src="/blog/algorithm-myth-onlyfans-earnings/hero.jpg"
+              alt=""
+              fill
+              className="object-cover"
+              priority
+              fetchPriority="high"
+              unoptimized
+            />
+          </div>
         )}
         {params.slug === 'scaling-smart-when-to-hire-manager' && (
-          <div 
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-            style={{ backgroundImage: 'url(/blog/scaling-smart-when-to-hire-manager/hero.png)' }}
-          />
+          <div className="absolute inset-0">
+            <Image
+              src="/blog/scaling-smart-when-to-hire-manager/hero.png"
+              alt=""
+              fill
+              className="object-cover"
+              priority
+              fetchPriority="high"
+              unoptimized
+            />
+          </div>
         )}
         {params.slug === 'staying-motivated-when-sales-slow-down' && (
-          <div 
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-            style={{ backgroundImage: 'url(/blog/staying-motivated-when-sales-slow-down/hero.jpg)' }}
-          />
+          <div className="absolute inset-0">
+            <Image
+              src="/blog/staying-motivated-when-sales-slow-down/hero.jpg"
+              alt=""
+              fill
+              className="object-cover"
+              priority
+              fetchPriority="high"
+              unoptimized
+            />
+          </div>
         )}
         {params.slug === 'setting-yourself-up-for-success-2026' && (
-          <div 
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-            style={{ backgroundImage: 'url(/blog/setting-yourself-up-for-success-2026/hero.jpg)' }}
-          />
+          <div className="absolute inset-0">
+            <Image
+              src="/blog/setting-yourself-up-for-success-2026/hero.jpg"
+              alt=""
+              fill
+              className="object-cover"
+              priority
+              fetchPriority="high"
+              unoptimized
+            />
+          </div>
         )}
         {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-white/60" />
+        <div className="absolute inset-0 bg-white/60 z-10" />
         {/* Content */}
         <div className="relative max-w-4xl mx-auto px-6 lg:px-8 z-10">
           <div className="flex items-center justify-end mb-8">

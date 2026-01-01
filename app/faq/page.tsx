@@ -43,8 +43,8 @@ export default function FAQ() {
   return (
     <div className="pt-20" style={{ backgroundImage: 'url(/photos/background.png)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', backgroundAttachment: 'fixed' }}>
       {/* Hero Section */}
-      <section className="py-24 bg-transparent">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
+      <section className="py-16 bg-transparent">
+        <div className="max-w-5xl mx-auto px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -58,6 +58,7 @@ export default function FAQ() {
               height={200}
               className="mx-auto h-auto w-full max-w-2xl"
               priority
+              fetchPriority="high"
               unoptimized
             />
           </motion.div>
@@ -65,7 +66,7 @@ export default function FAQ() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-xl md:text-2xl text-black-espresso/70 max-w-3xl mx-auto font-sans"
+            className="text-lg md:text-xl text-black-espresso/70 max-w-3xl mx-auto font-sans"
           >
             Everything you need to know about working with Onyxspire
           </motion.p>
@@ -73,9 +74,9 @@ export default function FAQ() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-16 bg-transparent">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <section className="py-12 bg-transparent">
+        <div className="max-w-5xl mx-auto px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {faqs.map((faq, index) => (
               <motion.div
                 key={index}
@@ -83,13 +84,13 @@ export default function FAQ() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-white/95 rounded-[20px] border-2 border-accent-pink/20 shadow-lg p-8 md:p-10 hover:border-accent-pink/40 transition-all"
+                className="bg-white/95 rounded-[16px] border-2 border-accent-pink/20 shadow-lg p-6 md:p-7 hover:border-accent-pink/40 transition-all"
               >
-                <h3 className="text-2xl md:text-3xl font-bold text-black-espresso mb-4" style={{ fontFamily: "'Catchy Mager', 'Cormorant Garamond', 'Playfair Display', serif" }}>
+                <h3 className="text-xl md:text-2xl font-bold text-black-espresso mb-3" style={{ fontFamily: "'Catchy Mager', 'Cormorant Garamond', 'Playfair Display', serif" }}>
                   {faq.question}
                 </h3>
-                <div className="h-px bg-accent-pink/30 mb-6"></div>
-                <p className="text-lg text-black-espresso/80 leading-relaxed font-sans">
+                <div className="h-px bg-accent-pink/30 mb-4"></div>
+                <p className="text-base text-black-espresso/80 leading-relaxed font-sans">
                   {faq.answer}
                 </p>
               </motion.div>
@@ -99,7 +100,7 @@ export default function FAQ() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-transparent">
+      <section className="py-16 bg-transparent">
         <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -107,10 +108,10 @@ export default function FAQ() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-4xl md:text-5xl font-serif font-bold text-black-espresso mb-6" style={{ fontFamily: "'Catchy Mager', 'Cormorant Garamond', 'Playfair Display', serif" }}>
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-black-espresso mb-4" style={{ fontFamily: "'Catchy Mager', 'Cormorant Garamond', 'Playfair Display', serif" }}>
               Still Have Questions?
             </h2>
-            <p className="text-xl text-black-espresso/70 mb-8 font-sans">
+            <p className="text-lg text-black-espresso/70 mb-6 font-sans">
               Get in touch with our team or start your application to learn more.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

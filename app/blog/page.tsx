@@ -81,6 +81,7 @@ export default function BlogPage() {
               height={150}
               className="mx-auto h-auto w-full max-w-2xl"
               priority
+              fetchPriority="high"
               unoptimized
             />
           </motion.div>

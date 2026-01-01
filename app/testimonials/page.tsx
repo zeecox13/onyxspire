@@ -91,7 +91,7 @@ export default function Testimonials() {
   return (
     <div className="pt-20 relative" style={{ backgroundImage: 'url(/photos/background.png)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', backgroundAttachment: 'fixed' }}>
       {/* Photo on right edge - extends from top of screen */}
-      <div className="hidden lg:block absolute pointer-events-none overflow-visible" style={{ right: '-32%', width: '85vw', top: '-80px', zIndex: 0 }}>
+      <div className="hidden lg:block absolute pointer-events-none overflow-visible" style={{ right: '-32%', width: '79.9vw', top: '-80px', zIndex: 0 }}>
         <Image
           src="/photos/sjoy.png"
           alt=""

@@ -552,6 +552,8 @@ export default function Home() {
                 width={500}
                 height={125}
                 className="mx-auto h-auto w-full max-w-xl"
+                priority
+                fetchPriority="high"
                 unoptimized
               />
             </div>
