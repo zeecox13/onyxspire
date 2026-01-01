@@ -256,7 +256,7 @@ export default function VideoHero() {
             className="mb-2 relative"
           >
             <div className="relative" style={{ 
-              filter: 'drop-shadow(0 0 4px rgba(0, 0, 0, 0.4)) drop-shadow(0 0 8px rgba(0, 0, 0, 0.3)) drop-shadow(0 0 12px rgba(0, 0, 0, 0.2))',
+              filter: 'drop-shadow(0 0 4px rgba(0, 0, 0, 0.4)) drop-shadow(0 0 8px rgba(0, 0, 0, 0.3)) drop-shadow(0 0 12px rgba(0, 0, 0, 0.2)) brightness(1.3) contrast(1.1)',
             }}>
               <Image
                 src="/photos/whiteonyxspirelogo.png"
@@ -266,6 +266,7 @@ export default function VideoHero() {
                 className="w-full max-w-4xl mx-auto h-auto"
                 priority
                 fetchPriority="high"
+                style={{ filter: 'brightness(1.2)' }}
               />
             </div>
           </motion.div>
