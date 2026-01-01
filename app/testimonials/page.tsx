@@ -192,7 +192,7 @@ export default function Testimonials() {
         </div>
         
         {/* Photo on right edge - extends to screen edge with no gap */}
-        <div className="hidden lg:block absolute top-0 h-full pointer-events-none" style={{ right: 0, width: '33vw' }}>
+        <div className="hidden lg:block absolute top-0 h-full pointer-events-none" style={{ right: '20%', width: '33vw' }}>
           <Image
             src="/photos/sjoy.png"
             alt=""

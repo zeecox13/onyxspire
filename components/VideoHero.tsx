@@ -7,18 +7,17 @@ import { useVideo } from '@/contexts/VideoContext'
 
 // Luxury video montage - rotating background videos
 const videoSources = [
-  '/videos/boat.mp4',
-  '/videos/cars.mp4',
-  '/videos/cityphone.mp4',
-  '/videos/dancing.mp4',
-  '/videos/drinks.mp4',
-  '/videos/nightclub.mp4',
-  '/videos/plane.mp4',
-  '/videos/pool.mp4',
+  '/videos/3015497-hd_1920_1080_24fps.mp4',
+  '/videos/3188888-hd_1920_1080_25fps.mp4',
+  '/videos/3403230-uhd_4096_2160_25fps.mp4',
+  '/videos/3569286-uhd_3840_2160_24fps.mp4',
+  '/videos/5309381-hd_1920_1080_25fps.mp4',
+  '/videos/5379128-uhd_4096_2160_25fps.mp4',
+  '/videos/5608053-uhd_3840_2160_30fps.mp4',
 ].map(src => encodeURI(src))
 
-// Videos that require white nav bar
-const darkVideos = ['nightclub', 'dancing', 'cityphone', 'plane', 'drinks']
+// Videos that require white nav bar (update based on video content)
+const darkVideos = []
 
 // Fallback gradient background if videos don't load
 const fallbackGradient = 'linear-gradient(135deg, #121212 0%, #1E1F24 50%, #121212 100%)'
@@ -36,38 +35,40 @@ export default function VideoHero() {
     setIsDarkVideo(isDark)
   }, [currentVideoIndex, setIsDarkVideo])
 
+  // Initial setup - load first video and start rotation
   useEffect(() => {
-    // Prioritize first video - load and play immediately
+    // Preload first video aggressively for instant playback
     const firstVideo = videoRefs.current[0]
     if (firstVideo) {
       firstVideo.preload = 'auto'
       firstVideo.playsInline = true
       firstVideo.muted = true
-      // Force immediate load and play
       firstVideo.load()
-      // Try to play immediately, retry if needed
-      const tryPlay = () => {
-        if (firstVideo.readyState >= 2) { // HAVE_CURRENT_DATA or better
+      
+      // Play immediately when ready
+      const playWhenReady = () => {
+        if (firstVideo.readyState >= 3) { // HAVE_FUTURE_DATA or better
           firstVideo.play().catch(() => {
-            // Retry after a short delay
+            // Retry if autoplay fails
             setTimeout(() => firstVideo.play().catch(() => {}), 100)
           })
         } else {
-          firstVideo.addEventListener('loadeddata', tryPlay, { once: true })
+          firstVideo.addEventListener('canplay', playWhenReady, { once: true })
+          firstVideo.addEventListener('loadeddata', playWhenReady, { once: true })
         }
       }
-      tryPlay()
+      playWhenReady()
     }
     
-    // Lazy load other videos - only preload metadata to save bandwidth
-    const otherVideos = videoRefs.current.slice(1).filter(Boolean) as HTMLVideoElement[]
-    otherVideos.forEach((video) => {
-      if (video) {
-        video.preload = 'metadata' // Only load metadata, not full video
-        video.playsInline = true
-        video.muted = true
-      }
-    })
+    // Preload second video for smooth first transition
+    const secondVideo = videoRefs.current[1]
+    if (secondVideo && secondVideo.dataset.src) {
+      secondVideo.preload = 'auto'
+      secondVideo.playsInline = true
+      secondVideo.muted = true
+      secondVideo.src = secondVideo.dataset.src
+      secondVideo.load()
+    }
 
     const interval = setInterval(() => {
       setCurrentVideoIndex((prev) => (prev + 1) % videoSources.length)
@@ -78,61 +79,73 @@ export default function VideoHero() {
     }
   }, [])
 
-  // Handle video playback when current video changes
+  // Handle video playback when current video changes - optimized for smooth transitions
   useEffect(() => {
     const videos = videoRefs.current.filter(Boolean) as HTMLVideoElement[]
     
     videos.forEach((video, index) => {
-      if (video) {
-        // Lazy load video source if it hasn't been loaded yet
-        if (index > 0 && !video.src && video.dataset.src) {
-          video.src = video.dataset.src
-          video.preload = 'auto'
-          video.load()
+      if (!video) return
+      
+      // Load video source if needed
+      if (index > 0 && !video.src && video.dataset.src) {
+        video.src = video.dataset.src
+        video.preload = 'auto'
+        video.playsInline = true
+        video.muted = true
+        video.load()
+      }
+      
+      if (index === currentVideoIndex) {
+        // Preload next video for seamless transition
+        const nextIndex = (currentVideoIndex + 1) % videoSources.length
+        const nextVideo = videoRefs.current[nextIndex]
+        if (nextVideo && !nextVideo.src && nextVideo.dataset.src) {
+          nextVideo.src = nextVideo.dataset.src
+          nextVideo.preload = 'auto'
+          nextVideo.playsInline = true
+          nextVideo.muted = true
+          nextVideo.load()
         }
         
-        if (index === currentVideoIndex) {
-          // Ensure video is buffered enough before playing to prevent stuttering
-          const playVideo = () => {
-            // Check if video has enough data buffered
-            if (video.readyState >= 4) { // HAVE_ENOUGH_DATA - best for smooth playback
-              video.play().catch((err) => {
-                console.warn('Video play failed:', err)
-                // Retry after a short delay
-                setTimeout(() => video.play().catch(() => {}), 200)
-              })
-            } else if (video.readyState >= 3) { // HAVE_FUTURE_DATA - also acceptable
-              video.play().catch((err) => {
-                console.warn('Video play failed:', err)
-              })
-            } else {
-              // Wait for more data to buffer
-              const bufferCheck = () => {
-                if (video.readyState >= 3) {
-                  video.play().catch(() => {})
-                } else {
-                  video.addEventListener('progress', bufferCheck, { once: true })
-                }
-              }
-              video.addEventListener('progress', bufferCheck, { once: true })
-            }
-          }
-          
-          // Try to play immediately if ready, otherwise wait
-          if (video.readyState >= 3) {
-            playVideo()
+        // Play current video - ensure it's buffered enough
+        const playVideo = () => {
+          if (video.readyState >= 4) { // HAVE_ENOUGH_DATA - best for smooth playback
+            video.currentTime = 0 // Reset to start for loop
+            video.play().catch(() => {
+              setTimeout(() => video.play().catch(() => {}), 100)
+            })
+          } else if (video.readyState >= 3) { // HAVE_FUTURE_DATA
+            video.currentTime = 0
+            video.play().catch(() => {})
           } else {
-            video.addEventListener('canplaythrough', playVideo, { once: true })
-            // Fallback if canplaythrough doesn't fire
-            setTimeout(playVideo, 500)
+            // Wait for buffer - don't play until we have enough data
+            const waitForBuffer = () => {
+              if (video.readyState >= 3) {
+                video.currentTime = 0
+                video.play().catch(() => {})
+              }
+            }
+            video.addEventListener('canplay', waitForBuffer, { once: true })
+            video.addEventListener('progress', waitForBuffer, { once: true })
+            video.addEventListener('loadeddata', waitForBuffer, { once: true })
           }
-        } else {
-          // Pause other videos smoothly
-          if (!video.paused) {
-            video.pause()
-          }
-          // Don't reset currentTime - allows for smoother transitions if user scrolls back
         }
+        
+        // Play immediately if ready, otherwise wait
+        if (video.readyState >= 3) {
+          playVideo()
+        } else {
+          video.addEventListener('canplaythrough', playVideo, { once: true })
+          video.addEventListener('canplay', playVideo, { once: true })
+          video.addEventListener('loadeddata', playVideo, { once: true })
+          setTimeout(playVideo, 200) // Shorter fallback timeout
+        }
+      } else {
+        // Pause other videos smoothly
+        if (!video.paused) {
+          video.pause()
+        }
+        // Don't reset currentTime - allows for smoother transitions
       }
     })
   }, [currentVideoIndex])
@@ -161,7 +174,7 @@ export default function VideoHero() {
           muted
           loop
           playsInline
-          preload={index === 0 ? "auto" : "metadata"} // Only auto-preload first video
+          preload={index === 0 ? "auto" : index === 1 ? "auto" : "metadata"} // Preload first two videos
           className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out ${
             index === currentVideoIndex ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'
           }`}

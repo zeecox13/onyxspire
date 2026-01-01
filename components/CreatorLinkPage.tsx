@@ -87,6 +87,8 @@ export default function CreatorLinkPage({ creator }: CreatorLinkPageProps) {
               const platformLower = link.platform.toLowerCase()
               // Increase logo size by 50% more for OnlyFans, Fansly, and SEXTPANTHER (90px -> 135px)
               const logoSize = (platformLower === 'onlyfans' || platformLower === 'fansly' || platformLower === 'sextpanther') ? 135 : 60
+              // Make button height 50% shorter for OnlyFans, Fansly, and SextPanther
+              const isSpecialPlatform = platformLower === 'onlyfans' || platformLower === 'fansly' || platformLower === 'sextpanther'
               
               return (
                 <motion.a
@@ -97,25 +99,38 @@ export default function CreatorLinkPage({ creator }: CreatorLinkPageProps) {
                   initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="group relative flex items-center justify-center gap-4 bg-white/95 backdrop-blur-sm border-2 border-accent-pink/30 rounded-xl px-6 hover:bg-white hover:border-accent-pink/60 hover:shadow-xl transition-all duration-300 shadow-lg overflow-hidden"
-                  style={{ paddingTop: '0px', paddingBottom: '0px', minWidth: '240px' }}
+                  className={`group relative flex items-center justify-center bg-white/95 backdrop-blur-sm border-2 border-accent-pink/30 rounded-xl px-6 hover:bg-white hover:border-accent-pink/60 hover:shadow-xl transition-all duration-300 shadow-lg ${isSpecialPlatform ? 'overflow-visible' : 'overflow-hidden'}`}
+                  style={{ 
+                    paddingTop: '0px', 
+                    paddingBottom: '0px', 
+                    minWidth: '240px',
+                    height: isSpecialPlatform ? '67.5px' : 'auto',
+                    maxHeight: isSpecialPlatform ? '67.5px' : 'none',
+                    gap: isSpecialPlatform ? '0' : '1rem'
+                  }}
                 >
-                  <div className="flex-shrink-0">
+                  <div className="flex-shrink-0" style={isSpecialPlatform ? {
+                    marginTop: '-33.75px',
+                    marginBottom: '-33.75px'
+                  } : {}}>
                     {getPlatformLogo(link.platform, logoSize)}
                   </div>
                   {platformLower === 'onlyfans' && (
                     <motion.span 
-                      className="text-green-500 font-semibold uppercase tracking-wider"
+                      className="absolute text-green-500 font-semibold uppercase tracking-wider"
                       style={{ 
-                        fontSize: '10px',
-                        textShadow: '0 0 10px rgba(34, 197, 94, 0.8), 0 0 20px rgba(34, 197, 94, 0.6), 0 0 30px rgba(34, 197, 94, 0.4)',
+                        top: '4px',
+                        right: '8px',
+                        fontSize: '8px',
+                        textShadow: '0 0 8px rgba(34, 197, 94, 0.8), 0 0 16px rgba(34, 197, 94, 0.6), 0 0 24px rgba(34, 197, 94, 0.4)',
+                        zIndex: 10
                       }}
                       animate={{
                         opacity: [0.5, 1, 0.5],
                         textShadow: [
-                          '0 0 10px rgba(34, 197, 94, 0.8), 0 0 20px rgba(34, 197, 94, 0.6), 0 0 30px rgba(34, 197, 94, 0.4)',
-                          '0 0 20px rgba(34, 197, 94, 1), 0 0 30px rgba(34, 197, 94, 0.8), 0 0 40px rgba(34, 197, 94, 0.6)',
-                          '0 0 10px rgba(34, 197, 94, 0.8), 0 0 20px rgba(34, 197, 94, 0.6), 0 0 30px rgba(34, 197, 94, 0.4)',
+                          '0 0 8px rgba(34, 197, 94, 0.8), 0 0 16px rgba(34, 197, 94, 0.6), 0 0 24px rgba(34, 197, 94, 0.4)',
+                          '0 0 16px rgba(34, 197, 94, 1), 0 0 24px rgba(34, 197, 94, 0.8), 0 0 32px rgba(34, 197, 94, 0.6)',
+                          '0 0 8px rgba(34, 197, 94, 0.8), 0 0 16px rgba(34, 197, 94, 0.6), 0 0 24px rgba(34, 197, 94, 0.4)',
                         ],
                       }}
                       transition={{

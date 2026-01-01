@@ -103,7 +103,7 @@ export default function AdminLogin() {
               className="w-full bg-accent-pink text-white px-8 py-4 font-semibold uppercase tracking-wider hover:bg-accent-pink/90 transition-all luxury-glow disabled:opacity-50 disabled:cursor-not-allowed text-lg"
               style={{ fontFamily: "'Catchy Mager', 'Cormorant Garamond', 'Playfair Display', serif" }}
             >
-              {isLoading ? 'Authenticating...' : 'Login'}
+              {isLoading ? 'Loading...' : 'Login'}
             </button>
           </form>
 

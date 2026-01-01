@@ -23,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="preload" href="/videos/boat.mp4" as="video" type="video/mp4" />
+        <link rel="preload" href="/videos/3015497-hd_1920_1080_24fps.mp4" as="video" type="video/mp4" />
       </head>
       <body>
         <VideoProvider>
