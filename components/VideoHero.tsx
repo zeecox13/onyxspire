@@ -247,7 +247,7 @@ export default function VideoHero() {
         })}
       </div>
 
-      <div className="relative z-10 h-full flex items-center justify-center">
+      <div className="relative z-50 h-full flex items-center justify-center">
         <div className="text-center px-6 max-w-5xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
